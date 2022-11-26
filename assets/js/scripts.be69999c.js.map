@@ -1,0 +1,1 @@
+{"version":3,"file":"assets/js/scripts.be69999c.js","mappings":";;;AAAwB","sources":["webpack://hr-landing-praktikum/./src/app.js"],"sourcesContent":["import './css/index.css'\nimport './js/index';\n\n"],"names":[],"sourceRoot":""}
