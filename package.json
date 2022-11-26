@@ -1,0 +1,19 @@
+{
+  "name": "hr-landing-praktikum",
+  "version": "1.0.0",
+  "description": "The MVP HR landing page is a web page that tells about the vacancies of support experts and work in Yandex Practicum. Support experts are mentors and reviewers who work part—time at the training courses of the Workshop.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noi5enu1sanc3/hr-landing-praktikum.git"
+  },
+  "author": "Pigeon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noi5enu1sanc3/hr-landing-praktikum/issues"
+  },
+  "homepage": "https://github.com/noi5enu1sanc3/hr-landing-praktikum#readme"
+}
