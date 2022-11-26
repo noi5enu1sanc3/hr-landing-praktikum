@@ -1,9 +1,11 @@
+
 {
   "extends": "stylelint-config-standard",
   "plugins": [
     "stylelint-selector-bem-pattern"
   ],
   "rules": {
+    "selector-class-pattern": null,
     "plugin/selector-bem-pattern": {
       "componentName": "[A-Z]+",
       "componentSelectors": {
@@ -12,5 +14,5 @@
       },
       "utilitySelectors": "^\\.util-[a-z]+$"
     }
-  }
+    }
 }

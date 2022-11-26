@@ -6,9 +6,10 @@
 
 /* SHARE */
 @import url("./share/inner-wrapper.css");
+@import url("./share/small-btn.css");
 
 /* LAYOUT */
 @import url("./layouts/header.css");
-@import url("./share/small-btn.css");
+@import url("./layouts/promotion.css");
 
 /* SECTIONS */
