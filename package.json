@@ -2,9 +2,12 @@
   "name": "hr-landing-praktikum",
   "version": "1.0.0",
   "description": "The MVP HR landing page is a web page that tells about the vacancies of support experts and work in Yandex Practicum. Support experts are mentors and reviewers who work part—time at the training courses of the Workshop.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack --mode production",
+    "dev": "webpack serve",
+    "deploy": "npm run build && gh-pages -d dist",
+    "lint": "npx stylelint \"src/**/*.css\""
   },
   "repository": {
     "type": "git",
@@ -19,16 +22,20 @@
   "devDependencies": {
     "@babel/core": "^7.19.3",
     "@babel/preset-env": "^7.19.4",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.13",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^4.2.2",
     "cssnano": "^5.1.13",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.6.1",
+    "mini-css-extract-plugin": "^2.7.0",
+    "postcss-loader": "^7.0.1",
     "resolve-url-loader": "^5.0.0",
     "stylelint": "^14.14.0",
     "stylelint-config-standard": "^29.0.0",
+    "stylelint-selector-bem-pattern": "^2.1.1",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1"
