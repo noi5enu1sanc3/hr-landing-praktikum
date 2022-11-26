@@ -15,5 +15,22 @@
   "bugs": {
     "url": "https://github.com/noi5enu1sanc3/hr-landing-praktikum/issues"
   },
-  "homepage": "https://github.com/noi5enu1sanc3/hr-landing-praktikum#readme"
+  "homepage": "https://github.com/noi5enu1sanc3/hr-landing-praktikum#readme",
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/preset-env": "^7.19.4",
+    "autoprefixer": "^10.4.12",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.13",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "resolve-url-loader": "^5.0.0",
+    "stylelint": "^14.14.0",
+    "stylelint-config-standard": "^29.0.0",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  }
 }
