@@ -1,0 +1,5 @@
+.inner-wrapper {
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  max-width: 1200px;
+}

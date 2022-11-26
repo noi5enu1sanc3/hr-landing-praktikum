@@ -1,10 +1,14 @@
 /* CORE */
 @import url("./core/normalize.css");
+@import url("./core/typography.css");
 @import url("./core/variables.css");
 @import url("./core/root.css");
 
 /* SHARE */
+@import url("./share/inner-wrapper.css");
 
 /* LAYOUT */
+@import url("./layouts/header.css");
+@import url("./share/small-btn.css");
 
 /* SECTIONS */

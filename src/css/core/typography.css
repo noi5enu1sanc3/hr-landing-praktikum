@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "YS Text";
+  src: url("../../fonts/ys/ys-display-medium.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "YS Text";
+  src: url("../../fonts/ys/ys-display-regular.ttf");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
