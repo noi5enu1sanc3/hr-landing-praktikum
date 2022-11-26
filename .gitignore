@@ -1,0 +1,18 @@
+# WebStorm
+*.iml
+
+# production
+/dist
+/node_modules
+
+# Directory-based project format:
+.idea/
+.idea/workspace.xml
+**/.idea/workspace.xml
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
