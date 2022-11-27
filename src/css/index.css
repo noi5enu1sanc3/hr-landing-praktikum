@@ -12,13 +12,4 @@
 @import url("./layouts/header.css");
 @import url("./layouts/footer.css");
 
-/* SECTIONS */
 
-
-/* COMPONENTS */
-@import url("./components/footer/footer__footer-logo.css");
-@import url("./components/footer/footer__top-of-footer.css");
-@import url("./components/footer/footer__column-2.css");
-@import url("./components/footer/footer__ul.css");
-@import url("./components/footer/footer__column-1.css");
-@import url("./components/footer/footer__h.css");

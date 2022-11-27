@@ -1,0 +1,27 @@
+.footer__column-1 {
+  border: 1px solid red;
+  }
+  .footer__column-2 {
+    border: 1px red solid;
+    display: flex;
+    margin-left: 36px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .footer__footer-logo {
+    width: 257px;
+  }
+  .footer__h {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+  .footer__ul {
+    list-style: none;
+    padding: 0;
+    border: 1px red solid;
+  }
+  .footer__top-of-footer {
+    border: 1px red solid;
+    display: flex;
+  }
