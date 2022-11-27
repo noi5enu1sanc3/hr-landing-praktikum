@@ -3,46 +3,130 @@
   flex-direction: column;
 }
 
-.tabs__navigation {
+.tabs__direction-nav {
 
 }
 
-.tabs__nav-list {
+.tabs__direction-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+.tabs__direction-item {
+  flex: 1 0 50%;
+}
+
+.tabs__direction-btn {
+  border: none;
+  padding: 0;
+  height: 60px;
+  max-width: 600px;
+  width: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+  color: #858585;
+  cursor: pointer;
+}
+
+.tabs__direction-item:first-child .tabs__direction-btn {
+  border-radius: 20px 0 0;
+}
+
+.tabs__direction-item:last-child .tabs__direction-btn {
+  border-radius: 0 20px 0 0;
+}
+
+.tabs__direction-btn_active {
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
+
+.tabs__profession-nav {
+  margin: 24px 0 0;
+}
+
+.navs__professions-list {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  gap: 16px;
 }
 
-.tabs__nav-item {
-  
+.tabs__profession-item {
+
 }
 
-.tabs__btn {
+.tabs__profession-btn {
+  border: none;
+  padding: 12px 24px;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 18px;
+  font-size: 24px;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
-.navs__navigation-filter {
-}
-
-.tabs__filter-btn {
-}
-
-.btn-active {
+.tabs__profession-btn_active {
+  background-color: var(--black-color);
+  color: var(--white-color);
 }
 
 .tabs__content {
+  margin: 28px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.offers__list {
+.tabs__content-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.offers__item {
+.tabs__content-item {
+  box-sizing: border-box;
+  background-color: var(--white-color);
+  border-radius: 20px;
+  padding: 20px 20px 10px;
+  flex: 0 1 calc((100% / 4) - 8px);
+  min-height: 236px;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
 }
 
-.offers__title-item {
+.tabs__content-item:nth-child(7n+1),
+.tabs__content-item:nth-child(7n+2),
+.tabs__content-item:nth-child(7n+3) {
+  flex: 0 1 calc((100% / 3) - 8px);
 }
 
-.offers__description-item {
+.tabs__content-title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #000;
+  letter-spacing: -0.5px;
 }
 
-.offers__description-payment {
+.tabs__content-text {
+  font-size: 20px;
+  color: #808080;
+  line-height: 1.45;
 }

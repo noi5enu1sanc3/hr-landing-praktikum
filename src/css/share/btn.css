@@ -11,7 +11,6 @@
   border: none;
   border-radius: 120px;
   backdrop-filter: blur(6px);
-  font-family: var(--ya-text-font);
   font-size: 16px;
   line-height: 1.25;
   cursor: pointer;

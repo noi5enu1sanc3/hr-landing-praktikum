@@ -20,7 +20,6 @@
 
 .promotion__text {
   color: var(--smoky-white-color);
-  font-family: var(--ya-text-font);
   font-weight: 500;
   max-width: 988px;
 }
