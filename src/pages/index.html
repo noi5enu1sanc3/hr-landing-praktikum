@@ -31,7 +31,6 @@
   <link type="image/png" sizes="32x32" rel="icon" href="<%=require('../uploads/favicons/favicon-32x32.png')%>">
   <link type="image/png" sizes="96x96" rel="icon" href="<%=require('../uploads/favicons/favicon-96x96.png')%>">
   <link type="image/png" sizes="120x120" rel="icon" href="<%=require('../uploads/favicons/favicon-120x120.png')%>">
-
 </head>
 <body class="root">
 <!-- Header -->
@@ -39,9 +38,9 @@
   <img class="main-logo" src="<%=require('../uploads/images/ru-logo-short.svg')%>" alt="Основной логотип">
   <a href="#" class="small-btn">Откликнуться</a>
 </header>
-<main>
+<main class="content">
   <!-- Promotion section -->
-  <section class="promotion inner-wrapper">
+  <section class="promotion inner-wrapper content__item">
     <h1 class="promotion__title">Станьте наставником или&#160;ревьюером</h1>
     <p class="promotion__description">Делись своим опытом в программировании, анализе данных, менеджменте, маркетинге или дизайне и получай дополнительный доход</p>
     <div class="promotion__content">
@@ -53,7 +52,11 @@
         <figcaption><p class="quote-blurry__author">Тимур</p></figcaption>
       </figure>
     </div>
-
+  </section>
+  <!--Video history section-->
+  <section class="video-history inner-wrapper content__item">
+    <p class="video-history__description">Знакомьтесь - это небольшая часть нашей команды. Тут и наставники и ревьюеры и они хотят кое-что сказать</p>
+    <a href="#" class="btn btn_theme_light">Смотреть видеоисторию</a>
   </section>
 </main>
 <footer></footer>
