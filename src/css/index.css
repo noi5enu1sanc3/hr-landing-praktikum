@@ -4,6 +4,7 @@
 @import url("./core/root.css");
 
 /* SHARE */
+@import url("./share/content.css");
 @import url("./share/inner-wrapper.css");
 @import url("./share/small-btn.css");
 @import url("./share/btn.css");
