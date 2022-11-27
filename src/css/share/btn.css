@@ -1,0 +1,25 @@
+.btn {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 316px;
+  min-height: 60px;
+  padding: 20px;
+  text-decoration: none;
+  border-radius: 120px;
+  backdrop-filter: blur(6px);
+  font-family: var(--ya-text-font);
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.btn_theme_dark {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+.btn_theme_light {
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
