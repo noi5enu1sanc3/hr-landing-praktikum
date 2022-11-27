@@ -1,0 +1,27 @@
+.prof-orientation {
+  margin: 68px auto 0;
+  height: 882px;
+  border: 1px red solid;
+  background-color: var(--white-color);
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+}
+.prof-orientation__header {
+  text-align: center;
+  font-family: var(--ya-text-font);
+}
+.prof-orientation__img {
+  width: 858px;
+  height: 524px;
+  background-image: url(../../uploads/images/test2.png);
+  border: 1px red solid;
+  /* background-repeat: no-repeat; */
+  margin-top: 90px;
+}
+.prof-orientation__button {
+  cursor: pointer;
+  margin: auto;
+  margin-top: 134px;
+  margin-bottom: 95px;
+}

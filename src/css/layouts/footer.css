@@ -1,3 +1,6 @@
+.footer {
+  margin: auto;
+}
 .footer__column-1 {
   border: 1px solid red;
   }
@@ -24,4 +27,13 @@
   .footer__top-of-footer {
     border: 1px red solid;
     display: flex;
+  }
+  .footer__bottom-0f-footer {
+    border: 1px red solid;
+  }
+  .footer__text {
+    border: 1px red solid;
+  }
+  .footer__all-rights {
+    border: 1px red solid;
   }
