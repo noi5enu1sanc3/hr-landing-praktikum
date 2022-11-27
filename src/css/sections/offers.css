@@ -1,0 +1,48 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs__navigation {
+
+}
+
+.tabs__nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tabs__nav-item {
+  
+}
+
+.tabs__btn {
+}
+
+.navs__navigation-filter {
+}
+
+.tabs__filter-btn {
+}
+
+.btn-active {
+}
+
+.tabs__content {
+}
+
+.offers__list {
+}
+
+.offers__item {
+}
+
+.offers__title-item {
+}
+
+.offers__description-item {
+}
+
+.offers__description-payment {
+}
