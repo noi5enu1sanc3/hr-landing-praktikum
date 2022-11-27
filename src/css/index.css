@@ -1,19 +1,20 @@
 /* CORE */
-@import url("./core/typography.css");
-@import url("./core/variables.css");
-@import url("./core/root.css");
+@import url('./core/typography.css');
+@import url('./core/variables.css');
+@import url('./core/root.css');
 
 /* SHARE */
-@import url("./share/content.css");
-@import url("./share/inner-wrapper.css");
-@import url("./share/small-btn.css");
-@import url("./share/btn.css");
-@import url("./share/quoute-blurry.css");
+@import url('./share/content.css');
+@import url('./share/inner-wrapper.css');
+@import url('./share/small-btn.css');
+@import url('./share/btn.css');
+@import url('./share/quoute-blurry.css');
 
 /* LAYOUT */
-@import url("./layouts/header.css");
-@import url("./layouts/footer.css");
+@import url('./layouts/header.css');
+@import url('./layouts/footer.css');
 
 /* SECTIONS */
-@import url("./sections/promotion.css");
-@import url("./sections/video-history.css");
+@import url('./sections/promotion.css');
+@import url('./sections/roles.css');
+@import url('./sections/video-history.css');
