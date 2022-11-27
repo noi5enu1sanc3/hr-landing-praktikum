@@ -13,3 +13,16 @@
   font-weight: 500;
   font-display: swap;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li {
+  font-family: var(--ya-text-font);
+  margin: 0;
+  padding: 0;
+}

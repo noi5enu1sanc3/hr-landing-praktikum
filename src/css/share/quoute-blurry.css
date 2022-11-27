@@ -18,7 +18,6 @@
 
 .quote-blurry__paragraph {
   margin: 2px 0 0;
-  font-family: var(--ya-text-font);
   color: var(--white-color);
   line-height: 1.29;
 }
@@ -26,6 +25,5 @@
 .quote-blurry__author {
   margin: 0;
   order: 1;
-  font-family: var(--ya-text-font);
   color: var(--white-color);
 }

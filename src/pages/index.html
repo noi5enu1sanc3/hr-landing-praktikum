@@ -12,7 +12,8 @@
   <meta property="og:url" content="https://praktikum.yandex.ru/job/index">
   <meta property="og:url" content="/index">
   <meta property="og:site_name" content="Станьте частью команды Яндекс.Практикума">
-  <meta property="og:image" content="https://avatars.mds.yandex.net/get-lpc/1220100/3c62c4d5-7a0b-4fa6-9ff2-a484d4afafee/orig">
+  <meta property="og:image"
+        content="https://avatars.mds.yandex.net/get-lpc/1220100/3c62c4d5-7a0b-4fa6-9ff2-a484d4afafee/orig">
   <meta property="og:locale" content="ru">
   <meta name="description" content="Станьте частью команды экспертов Яндекс Практикума">
   <meta name="keywords" content="вакансии, ревьюер, наставник, практикум, яндекс">
@@ -26,7 +27,8 @@
   <link rel="preconnect" href="https://avatars.mds.yandex.net/">
   <link rel="preconnect" href="https://mc.yandex.ru/">
   <link rel="preconnect" href="https://mc.admetrica.ru/">
-  <link type="image/x-icon" rel="shortcut icon" href=<%=require('../uploads/favicons/favicon.ico')%>>
+  <link type="image/x-icon" rel="shortcut icon" href=<%=require('../uploads/favicons/favicon.ico')%>
+  >
   <link type="image/png" sizes="16x16" rel="icon" href="<%=require('../uploads/favicons/favicon-16x16.png')%>">
   <link type="image/png" sizes="32x32" rel="icon" href="<%=require('../uploads/favicons/favicon-32x32.png')%>">
   <link type="image/png" sizes="96x96" rel="icon" href="<%=require('../uploads/favicons/favicon-96x96.png')%>">
@@ -42,12 +44,14 @@
   <!-- Promotion section -->
   <section class="promotion inner-wrapper content__item">
     <h1 class="promotion__title promotion__text">Станьте наставником или&#160;ревьюером</h1>
-    <p class="promotion__description promotion__text">Делись своим опытом в программировании, анализе данных, менеджменте, маркетинге или дизайне и получай дополнительный доход</p>
+    <p class="promotion__description promotion__text">Делись своим опытом в программировании, анализе данных,
+      менеджменте, маркетинге или дизайне и получай дополнительный доход</p>
     <div class="promotion__content">
       <a href="#" class="btn btn_theme_light promotion__content-btn">Кнопка</a>
       <figure class="quote-blurry">
         <blockquote class="quote-blurry__text">
-          <p class="quote-blurry__paragraph">«Работаю в IT-компании, учился на курсе «Веб-разработчик». Стремлюсь к тому, чтобы каждый сайт, сделанный моими руками,  был лучше предыдущего»</p>
+          <p class="quote-blurry__paragraph">«Работаю в IT-компании, учился на курсе «Веб-разработчик». Стремлюсь к
+            тому, чтобы каждый сайт, сделанный моими руками, был лучше предыдущего»</p>
         </blockquote>
         <figcaption><p class="quote-blurry__author">Тимур</p></figcaption>
       </figure>
@@ -55,89 +59,105 @@
   </section>
   <!--Video history section-->
   <section class="video-history inner-wrapper content__item">
-    <p class="video-history__description">Знакомьтесь - это небольшая часть нашей команды. Тут и наставники и ревьюеры и они хотят кое-что сказать</p>
+    <p class="video-history__description">Знакомьтесь - это небольшая часть нашей команды. Тут и наставники и ревьюеры и
+      они хотят кое-что сказать</p>
     <a href="#" class="btn btn_theme_light">Смотреть видеоисторию</a>
   </section>
   <!--Offers section-->
   <section class="offers inner-wrapper content__item">
     <div class="tabs">
-      <nav class="tabs__navigation">
-        <ul class="tabs__nav-list">
-          <li class="tabs__nav-item"><button class="tabs__btn" type="button">Для наставников</button></li>
-          <li class="tabs__nav-item"><button class="tabs__btn" type="button">Для ревьюверов</button></li>
+      <nav class="tabs__direction-nav">
+        <ul class="tabs__direction-list">
+          <li class="tabs__direction-item">
+            <button class="tabs__direction-btn tabs__direction-btn_active" type="button">Для наставников</button>
+          </li>
+          <li class="tabs__direction-item">
+            <button class="tabs__direction-btn" type="button">Для ревьюверов</button>
+          </li>
         </ul>
       </nav>
-      <nav class="navs__navigation-filter">
-        <ul class="tabs__nav-list">
-          <li class="tabs__nav-item"><button class="tabs__filter-btn btn-active" type="button">Все</button></li>
-          <li class="tabs__nav-item"><button class="tabs__filter-btn btn-active" type="button">Программирование</button></li>
-          <li class="tabs__nav-item"><button class="tabs__filter-btn btn-active" type="button">Дизайн</button></li>
-          <li class="tabs__nav-item"><button class="tabs__filter-btn btn-active" type="button">Маркетинг</button></li>
-          <li class="tabs__nav-item"><button class="tabs__filter-btn btn-active" type="button">Менеджмент</button></li>
+      <nav class="tabs__profession-nav">
+        <ul class="navs__professions-list">
+          <li class="tabs__profession-item">
+            <button class="tabs__profession-btn tabs__profession-btn_active" type="button">Все</button>
+          </li>
+          <li class="tabs__profession-item">
+            <button class="tabs__profession-btn" type="button">Программирование</button>
+          </li>
+          <li class="tabs__profession-item">
+            <button class="tabs__profession-btn" type="button">Дизайн</button>
+          </li>
+          <li class="tabs__profession-item">
+            <button class="tabs__profession-btn" type="button">Маркетинг</button>
+          </li>
+          <li class="tabs__profession-item">
+            <button class="tabs__profession-btn" type="button">Менеджмент</button>
+          </li>
         </ul>
       </nav>
       <div class="tabs__content">
-        <ul class="offers__list">
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «Мидл фронтенд-разработчик»</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">В среднем 35 000 ₽ в месяц</p>
+        <ul class="tabs__content-list">
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «Мидл фронтенд-разработчик»</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">В среднем 35 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «Python-разработчик» (ищем только в резерв)</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">От 50 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «Python-разработчик» (ищем только в резерв)</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">От 50 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «Мидл Python-разработчик» (ищем только в резерв)</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">В среднем 50 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «Мидл Python-разработчик» (ищем только в резерв)</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">В среднем 50 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «Разработчик С++»</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">От 45 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «Разработчик С++»</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">От 45 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «Java-разработчик»</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">До 55 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «Java-разработчик»</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">До 55 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «Go-разработчик»</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">В среднем 45 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «Go-разработчик»</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">В среднем 45 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «Алгоритмы для разработчиков»</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">От 45 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «Алгоритмы для разработчиков»</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">От 45 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «Инженер по тестированию»</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">В среднем 50 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «Инженер по тестированию»</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">В среднем 50 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «DevOps»</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">От 45 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «DevOps»</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">От 45 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «Android- разработчик»</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">В среднем 45 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «Android- разработчик»</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">В среднем 45 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «IOS- разработчик»</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">В среднем 45 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «IOS- разработчик»</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">В среднем 45 000 ₽ в месяц</p>
           </li>
-          <li class="offers__item">
-            <h2 class="offers__title-item">Наставник на курс «Асинхронное программирование на Python»</h2>
-            <p class="offers__description-item">Оплата за ведение группы</p>
-            <p class="offers__description-payment">В среднем 45 000 ₽ в месяц</p>
+          <li class="tabs__content-item">
+            <h2 class="tabs__content-title">Наставник на курс «Асинхронное программирование на Python»</h2>
+            <p class="tabs__content-text">Оплата за ведение группы</p>
+            <p class="tabs__content-text">В среднем 45 000 ₽ в месяц</p>
           </li>
+        </ul>
         </ul>
       </div>
     </div>
