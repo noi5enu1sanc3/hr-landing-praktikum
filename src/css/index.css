@@ -1,5 +1,4 @@
 /* CORE */
-@import url("./core/normalize.css");
 @import url("./core/typography.css");
 @import url("./core/variables.css");
 @import url("./core/root.css");
@@ -7,6 +6,8 @@
 /* SHARE */
 @import url("./share/inner-wrapper.css");
 @import url("./share/small-btn.css");
+@import url("./share/btn.css");
+@import url("./share/quoute-blurry.css");
 
 /* LAYOUT */
 @import url("./layouts/header.css");
