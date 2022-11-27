@@ -5,7 +5,7 @@
   background-color: var(--white-color);
   display: flex;
   flex-direction: column;
- justify-content: center;
+  justify-content: center;
 }
 .prof-orientation__header {
   text-align: center;

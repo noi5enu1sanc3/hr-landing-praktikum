@@ -1,0 +1,19 @@
+.section-questions {
+  border: 1px red solid;
+  height: 1066px;
+}
+.section-questions__header {
+  text-align: center;
+  font-family: var(--ya-text-font);
+  font-size: 500;
+  font-weight: 500;
+}
+.section-questions__img {
+  width: 744px;
+  height: 683px;
+  background-image: url(../../uploads/images/boy.svg);
+  background-repeat: no-repeat;
+  border: 1px red solid;
+  /* background-repeat: no-repeat; */
+  margin: 313px auto 0;
+}
