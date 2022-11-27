@@ -116,99 +116,122 @@
   <!--Offers section-->
   <section class="offers inner-wrapper content__item">
     <div class="tabs">
-      <nav class="tabs__direction-nav">
-        <ul class="tabs__direction-list">
-          <li class="tabs__direction-item">
-            <button class="tabs__direction-btn tabs__direction-btn_active" type="button">Для наставников</button>
-          </li>
-          <li class="tabs__direction-item">
-            <button class="tabs__direction-btn" type="button">Для ревьюверов</button>
-          </li>
-        </ul>
-      </nav>
-      <nav class="tabs__profession-nav">
-        <ul class="navs__professions-list">
-          <li class="tabs__profession-item">
-            <button class="tabs__profession-btn tabs__profession-btn_active" type="button">Все</button>
-          </li>
-          <li class="tabs__profession-item">
-            <button class="tabs__profession-btn" type="button">Программирование</button>
-          </li>
-          <li class="tabs__profession-item">
-            <button class="tabs__profession-btn" type="button">Дизайн</button>
-          </li>
-          <li class="tabs__profession-item">
-            <button class="tabs__profession-btn" type="button">Маркетинг</button>
-          </li>
-          <li class="tabs__profession-item">
-            <button class="tabs__profession-btn" type="button">Менеджмент</button>
-          </li>
-        </ul>
-      </nav>
+      <div class="tabs__header">
+        <h2 class="tabs__title">Открытые предложения</h2>
+        <nav class="tabs__navigation">
+          <ul class="tabs__navigation-list">
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn_active" data-check="mentor">Наставник</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn" data-check="reviewer">Ревьювер</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn_active" data-check="programming">Программирование</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn" data-check="design">Дизайн</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn" data-check="marketing">Маркетинг</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn" data-check="management">Менеджмент</button>
+            </li>
+          </ul>
+          <ul class="tabs__navigation-list">
+            <li class="tabs__navigation-item">
+              <button name="salary" type="button" class="tabs__btn">от 35 000</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button name="salary" type="button" class="tabs__btn">от 40 000</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button name="salary" type="button" class="tabs__btn ">от 45 000</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button name="salary" type="button" class="tabs__btn">от 50 000</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <div class="tabs__content">
         <ul class="tabs__content-list">
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «Мидл фронтенд-разработчик»</h2>
+            <h3 class="tabs__content-title">Наставник на курс «Мидл фронтенд-разработчик»</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">В среднем 35 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «Python-разработчик» (ищем только в резерв)</h2>
+            <h3 class="tabs__content-title">Наставник на курс «Python-разработчик» (ищем только в резерв)</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">От 50 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «Мидл Python-разработчик» (ищем только в резерв)</h2>
+            <h3 class="tabs__content-title">Наставник на курс «Мидл Python-разработчик» (ищем только в резерв)</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">В среднем 50 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «Разработчик С++»</h2>
+            <h3 class="tabs__content-title">Наставник на курс «Разработчик С++»</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">От 45 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «Java-разработчик»</h2>
+            <h3 class="tabs__content-title">Наставник на курс «Java-разработчик»</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">До 55 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «Go-разработчик»</h2>
+            <h3 class="tabs__content-title">Наставник на курс «Go-разработчик»</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">В среднем 45 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «Алгоритмы для разработчиков»</h2>
+            <h3 class="tabs__content-title">Наставник на курс «Алгоритмы для разработчиков»</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">От 45 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «Инженер по тестированию»</h2>
+            <h3 class="tabs__content-title">Наставник на курс «Инженер по тестированию»</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">В среднем 50 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «DevOps»</h2>
+            <h3 class="tabs__content-title">Наставник на курс «DevOps»</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">От 45 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «Android- разработчик»</h2>
+            <h3 class="tabs__content-title">Наставник на курс «Android- разработчик»</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">В среднем 45 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «IOS- разработчик»</h2>
+            <h3 class="tabs__content-title">Наставник на курс «IOS- разработчик»</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">В среднем 45 000 ₽ в месяц</p>
           </li>
           <li class="tabs__content-item">
-            <h2 class="tabs__content-title">Наставник на курс «Асинхронное программирование на Python»</h2>
+            <h3 class="tabs__content-title">Наставник на курс «Асинхронное программирование на Python»</h3>
             <p class="tabs__content-text">Оплата за ведение группы</p>
             <p class="tabs__content-text">В среднем 45 000 ₽ в месяц</p>
           </li>
+          <li class="tabs__content-item tabs__content-item_button">
+            <button type="button" class="content-item__btn content-item__btn_direction_back"><span class="content-item__btn-text">Назад</span></button>
+          </li>
+          <li class="tabs__content-item tabs__content-item_button">
+            <button type="button" class="content-item__btn content-item__btn_direction_next"><span class="content-item__btn-text">Далее</span></button>
+          </li>
         </ul>
-        </ul>
+        <nav class="tabs__pagination">
+          <ul class="tabs__pagination-list">
+            <li class="tabs__pagination-item">1</li>
+            <li class="tabs__pagination-item tabs__pagination-item_active">2</li>
+            <li class="tabs__pagination-item">3</li>
+            <li class="tabs__pagination-item">4</li>
+          </ul>
+        </nav>
       </div>
     </div>
   </section>
