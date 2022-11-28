@@ -2,6 +2,8 @@ import FilterOffers from './components/FilterOffers';
 import { Offer } from './components/Offer';
 import { List } from './components/List';
 import RoleCard from './components/RoleCard';
+import offersData from "./utils/offersData.json";
+
 import {
   ROLE_CARD_SELECTOR_CONFIG,
   ROLE_CARD_CLASS_CONFIG,
@@ -57,6 +59,6 @@ const offersList = new List({
 }, OFFERS_ITEM_SELECTOR_CONFIG);
 
 const testData = [{ name: 'testName', salary: '12000' }, { name: 'testName', salary: '12000' }];
-offersList.render(testData);
+offersList.render(offersData);
 
-// Генерация
+console.log(offersData);

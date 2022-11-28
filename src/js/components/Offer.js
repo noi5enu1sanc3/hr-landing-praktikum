@@ -5,7 +5,7 @@ export class Offer {
     this._templateContent = document.querySelector(cardSelectors.itemTemplateSelector).content;
     // Данные
     this._name = data.name;
-    this._salary = data.salary;
+    this._text = data.text;
     // Селекторы
     this._itemSelector = cardSelectors.itemSelector;
     this._titleSector = cardSelectors.titleSelector;
@@ -27,7 +27,7 @@ export class Offer {
 
     this._titleElement.textContent = this._name;
     this._contentElements[0].textContent = 'Оплата за ведение группы';
-    this._contentElements[1].textContent = this._salary;
+    this._contentElements[1].textContent = this._text;
 
     return this._itemElement;
   }
