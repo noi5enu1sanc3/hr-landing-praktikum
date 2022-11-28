@@ -19,6 +19,12 @@ export const ROLE_CARD_CLASS_CONFIG = {
   hiddenClass: 'roles_visually-hidden',
 };
 
+export const BUTTON_TABS_CONFIG = {
+  buttonCheckboxSelector: '.tabs__btn-checkbox',
+  buttonRadioSelector: '.tabs__btn-radio'
+}
+
+
 export const OFFERS_ITEM_SELECTOR_CONFIG = {
   listSelector: '.tabs__content-list',
   itemTemplateSelector:'.tabs__content-item-template',

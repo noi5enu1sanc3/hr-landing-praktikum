@@ -7,6 +7,7 @@ import offersData from "./utils/offersData.json";
 import {
   ROLE_CARD_SELECTOR_CONFIG,
   ROLE_CARD_CLASS_CONFIG,
+  BUTTON_TABS_CONFIG,
   OFFERS_ITEM_SELECTOR_CONFIG,
 } from './utils/constants';
 
@@ -42,7 +43,7 @@ const roleCardRight = new RoleCard(
 );
 roleCardRight.setEventListeners();
 
-const filterOffers = new FilterOffers('.tabs__btn-checkbox', '.tabs__btn-radio');
+const filterOffers = new FilterOffers(offersData, BUTTON_TABS_CONFIG);
 filterOffers.setEventListeners();
 
 // Создание офера
@@ -58,7 +59,4 @@ const offersList = new List({
   }
 }, OFFERS_ITEM_SELECTOR_CONFIG);
 
-const testData = [{ name: 'testName', salary: '12000' }, { name: 'testName', salary: '12000' }];
 offersList.render(offersData);
-
-console.log(offersData);
