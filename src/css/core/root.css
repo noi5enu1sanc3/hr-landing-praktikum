@@ -1,8 +1,0 @@
-.root {
-  background-color: var(--smoky-white-color);
-}
-
-div,
-section {
-  box-sizing: border-box;
-}
