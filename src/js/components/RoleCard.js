@@ -27,6 +27,7 @@ export default class RoleCard {
     this._openedItemClass = openedItemClass;
     this._closedItemClass = closedItemClass;
     this._hiddenClass = hiddenClass;
+    console.log(this._openButton);
   }
 
   _toggle() {
