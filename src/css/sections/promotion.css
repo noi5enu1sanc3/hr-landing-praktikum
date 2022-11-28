@@ -1,0 +1,36 @@
+.promotion {
+  min-height: 643px;
+  background: no-repeat url("../../uploads/images/timur-web-developer.jpg") center / cover;
+  padding: 50px 38px 132px 106px;
+}
+
+.promotion__title {
+  margin: 0;
+  font-size: 80px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  width: 100%;
+}
+
+.promotion__description {
+  margin: 40px 0 0;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.promotion__text {
+  color: var(--smoky-white-color);
+  font-weight: 500;
+  max-width: 988px;
+}
+
+.promotion__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 71px 0 0;
+}
+
+.promotion__content-btn {
+  margin: 12px 0 0;
+}

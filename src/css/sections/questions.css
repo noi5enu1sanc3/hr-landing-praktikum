@@ -1,0 +1,21 @@
+.section-questions {
+  height: 1066px;
+  background-color: var(--white-color);
+  overflow: hidden;
+}
+.section-questions__header {
+  text-align: center;
+  font-family: var(--ya-text-font);
+  font-size: 64px;
+  font-weight: 500;
+}
+.section-questions__img {
+  width: 744px;
+  height: 683px;
+  background-image: url(../../uploads/images/boy.svg);
+  background-repeat: no-repeat;
+  margin: 280px auto 0;
+}
+.section-questions__title_accent_some-color {
+  color: #ED6F5D;
+}
