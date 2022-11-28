@@ -1,13 +1,16 @@
 .prof-orientation {
   margin: 68px auto 0;
   height: 882px;
-  border: 1px red solid;
   background-color: var(--white-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .prof-orientation__header {
+  line-height: 96px;
+  margin-top: 40px;
+  font-size: 64px;
+  font-weight: 500;
   text-align: center;
   font-family: var(--ya-text-font);
 }
@@ -15,13 +18,14 @@
   width: 858px;
   height: 524px;
   background-image: url(../../uploads/images/test2.png);
-  border: 1px red solid;
-  /* background-repeat: no-repeat; */
-  margin-top: 90px;
+  background-repeat: no-repeat;
+  margin-top: 44px;
 }
 .prof-orientation__button {
   cursor: pointer;
   margin: auto;
-  margin-top: 134px;
   margin-bottom: 95px;
+}
+.prof-orientation__title_accent_some-color {
+  color: #3073E8;
 }
