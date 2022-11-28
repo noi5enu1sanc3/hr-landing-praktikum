@@ -1,5 +1,6 @@
 .roles {
-  height: 768px;
+  height: 857px;
+  max-height: 95vh;
 }
 
 .roles__list {
@@ -15,12 +16,15 @@
 .roles__item {
   border-radius: var(--corners-radius);
   background-color: var(--white-color);
-  width: calc(50% - 7px);
+  padding: 48px 26px;
+  width: 596px;
+  box-sizing: border-box;
   height: 100%;
   position: absolute;
   overflow: hidden;
   top: 0;
   display: flex;
+  justify-content: space-between;
   transition: all .4s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
@@ -29,7 +33,6 @@
 }
 
 .roles__item_right {
-  width: calc(50% - 7px);
   right: 0;
 }
 
@@ -48,19 +51,20 @@
 }
 
 .roles__main {
-  min-width: 606px;
-  max-width: 606px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 60px;
-  padding: 60px 30px 23px;
+  justify-content: space-between;
   z-index: 5;
+  width: 544px;
   height: 100%;
 }
 
+.roles__open-btn {
+  align-self: center;
+}
+
 .roles__close-btn {
+  align-self: center;
   border-radius: 50%;
   border: 2px solid var(--black-color);
   background: url("../../uploads/images/close-icon-cross.svg") no-repeat center;
@@ -75,11 +79,11 @@
 
 .roles__details {
   box-sizing: border-box;
-  padding: 60px 30px 23px;
   background-color: var(--white-color);
   top: 0;
   left: 0;
   opacity: 0;
+  width: 0;
 }
 
 .roles__details_left {
@@ -93,14 +97,17 @@
 .roles__details_opened-left {
   opacity: 1;
   z-index: 2;
+  width: 544px;
   height: 100%;
   margin-left: 0;
+  transition: width .7s ease-in;
   transition: all .4s ease-in;
 }
 
 .roles__details_opened-right {
   opacity: 1;
   z-index: 2;
+  width: 544px;
   height: 100%;
   margin-right: 0;
   transition: all .4s ease-in;
@@ -163,6 +170,11 @@
   font-size: 20px;
   line-height: 1.45;
   letter-spacing: -0.5px;
+  align-self: flex-start;
+}
+
+.roles__text-list-item {
+  word-wrap: break-word;
 }
 
 .roles__details-text {
@@ -183,9 +195,20 @@
 }
 
 .roles__image {
+  margin-bottom: 52px;
   width: 100%;
-  min-height: 213px;
-  background-color: var(--smoky-white-color);
+  height: 263px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.role__image_reviewer {
+  background-image: url("../../uploads/images/reviewer-image.svg");
+}
+
+.role__image_mentor {
+  background-image: url("../../uploads/images/mentor-image.svg");
 }
 
 .roles__item_opened {
