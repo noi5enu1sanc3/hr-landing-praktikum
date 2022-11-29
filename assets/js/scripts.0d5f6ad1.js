@@ -362,6 +362,7 @@ var filterOffers = new FilterOffers(offersData_namespaceObject, BUTTON_TABS_CONF
   }
 });
 filterOffers.setEventListeners();
+filterOffers.renderData(offersData_namespaceObject);
 var accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
 ;// CONCATENATED MODULE: ./src/app.js
@@ -369,4 +370,4 @@ accordion.setEventListener();
 
 /******/ })()
 ;
-//# sourceMappingURL=scripts.2d8b8a81.js.map
+//# sourceMappingURL=scripts.0d5f6ad1.js.map
