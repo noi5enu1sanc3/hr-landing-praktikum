@@ -70,5 +70,7 @@ const filterOffers = new FilterOffers(offersData, BUTTON_TABS_CONFIG, {
 
 filterOffers.setEventListeners();
 
+filterOffers.renderData(offersData)
+
 const accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
