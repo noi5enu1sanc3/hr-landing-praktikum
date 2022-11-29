@@ -9,6 +9,7 @@
 @import url("./share/small-btn.css");
 @import url("./share/btn.css");
 @import url("./share/quoute-blurry.css");
+@import url("share/text-accent.css");
 
 /* LAYOUT */
 @import url("./layouts/header.css");
