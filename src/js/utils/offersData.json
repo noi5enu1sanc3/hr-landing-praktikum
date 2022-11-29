@@ -1,0 +1,100 @@
+[
+  {
+    "post": "mentor",
+    "direction": "programming",
+    "name": "Наставник на курс «Мидл фронтенд-разработчик»",
+    "text": "В среднем 35 000₽",
+    "salary": 35000
+  },
+  {
+    "post": "mentor",
+    "direction": "design",
+    "name": "Наставник на курс «Разработчик C++»",
+    "text": "В среднем 45 000 ₽ в месяц",
+    "salary": 45000
+  },
+  {
+    "post": "mentor",
+    "direction": "design",
+    "name": "Наставник на курс «Дизайнер интерфейсов»",
+    "text": "В среднем 40 000₽",
+    "salary": 40000
+  },
+  {
+    "post": "mentor",
+    "direction": "design",
+    "name": "Наставник на курс «Графический дизайнер»",
+    "text": "В среднем 35 000₽",
+    "salary": 35000
+  },
+  {
+    "post": "mentor",
+    "direction": "marketing",
+    "name": "Наставник на курс «Графический дизайнер»",
+    "text": "В среднем 30 000₽",
+    "salary": 30000
+  },
+  {
+    "post": "mentor",
+    "direction": "marketing",
+    "name": "Наставник на курс «Интернет-маркетолог»",
+    "text": "В среднем 50 000₽",
+    "salary": 50000
+  },
+  {
+    "post": "mentor",
+    "direction": "management",
+    "name": "Наставник на курс «Менеджер проектов»",
+    "text": "В среднем 65 000₽",
+    "salary": 65000
+  },
+  {
+    "post": "reviewer",
+    "direction": "programming",
+    "name": "Ревьювер на курс «Мидл фронтенд-разработчик»",
+    "text": "В среднем 35 000₽",
+    "salary": 35000
+  },
+  {
+    "post": "reviewer",
+    "direction": "programming",
+    "name": "Ревьювер на курс «Разработчик C++»",
+    "text": "В среднем 45 000 ₽ в месяц",
+    "salary": 45000
+  },
+  {
+    "post": "reviewer",
+    "direction": "design",
+    "name": "Ревьювер на курс «Дизайнер интерфейсов»",
+    "text": "В среднем 40 000₽",
+    "salary": 40000
+  },
+  {
+    "post": "reviewer",
+    "direction": "design",
+    "name": "Ревьювер на курс «Графический дизайнер»",
+    "text": "В среднем 35 000₽",
+    "salary": 35000
+  },
+  {
+    "post": "reviewer",
+    "direction": "marketing",
+    "name": "Ревьювер на курс «Графический дизайнер»",
+    "text": "В среднем 30 000₽",
+    "salary": 30000
+  },
+  {
+    "post": "reviewer",
+    "direction": "marketing",
+    "name": "Ревьювер на курс «Интернет-маркетолог»",
+    "text": "В среднем 50 000₽",
+    "salary": 50000
+  },
+  {
+    "post": "reviewer",
+    "direction": "Менеджер проектов",
+    "name": "Ревьювер на курс «Мидл фронтенд-разработчик»",
+    "text": "В среднем 65 000₽",
+    "salary": 65000
+  }
+]

@@ -1,7 +1,14 @@
+import FilterOffers from './components/FilterOffers';
+import { Offer } from './components/Offer';
+import { List } from './components/List';
 import RoleCard from './components/RoleCard';
+import offersData from "./utils/offersData.json";
+
 import {
   ROLE_CARD_SELECTOR_CONFIG,
   ROLE_CARD_CLASS_CONFIG,
+  BUTTON_TABS_CONFIG,
+  OFFERS_ITEM_SELECTOR_CONFIG,
 } from './utils/constants';
 
 const roleCardLeft = new RoleCard(
@@ -35,3 +42,29 @@ const roleCardRight = new RoleCard(
   ROLE_CARD_CLASS_CONFIG.hiddenClass
 );
 roleCardRight.setEventListeners();
+
+
+// Создание офера
+const createOffer = (data) => {
+  const offer = new Offer(data, OFFERS_ITEM_SELECTOR_CONFIG);
+  return offer.generateOffer();
+}
+
+const offersList = new List({
+  renderer: (item) => {
+    const offer = createOffer(item);
+    offersList.addItem(offer);
+  }
+}, OFFERS_ITEM_SELECTOR_CONFIG);
+
+
+const filterOffers = new FilterOffers(offersData, BUTTON_TABS_CONFIG, {
+  rendererData: (data) => {
+    offersList.clearList();
+    offersList.render(data);
+  }
+});
+
+filterOffers.setEventListeners();
+
+console.log(filterOffers.renderData());

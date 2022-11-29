@@ -18,3 +18,17 @@ export const ROLE_CARD_CLASS_CONFIG = {
   toggleBtnCloseStateClass: 'roles__btn_close',
   hiddenClass: 'roles_visually-hidden',
 };
+
+export const BUTTON_TABS_CONFIG = {
+  buttonCheckboxSelector: '.tabs__btn-checkbox',
+  buttonRadioSelector: '.tabs__btn-radio'
+}
+
+
+export const OFFERS_ITEM_SELECTOR_CONFIG = {
+  listSelector: '.tabs__content-list',
+  itemTemplateSelector:'.tabs__content-item-template',
+  itemSelector: '.tabs__content-item',
+  titleSelector: '.tabs__content-title',
+  contentSelector: '.tabs__content-text',
+}
