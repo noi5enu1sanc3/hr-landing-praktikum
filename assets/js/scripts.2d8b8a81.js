@@ -214,6 +214,46 @@ var List = /*#__PURE__*/function () {
   }]);
   return List;
 }();
+;// CONCATENATED MODULE: ./src/js/components/Accordion.js
+function Accordion_toConsumableArray(arr) { return Accordion_arrayWithoutHoles(arr) || Accordion_iterableToArray(arr) || Accordion_unsupportedIterableToArray(arr) || Accordion_nonIterableSpread(); }
+function Accordion_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function Accordion_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return Accordion_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Accordion_arrayLikeToArray(o, minLen); }
+function Accordion_iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function Accordion_arrayWithoutHoles(arr) { if (Array.isArray(arr)) return Accordion_arrayLikeToArray(arr); }
+function Accordion_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function Accordion_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function Accordion_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function Accordion_createClass(Constructor, protoProps, staticProps) { if (protoProps) Accordion_defineProperties(Constructor.prototype, protoProps); if (staticProps) Accordion_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+var Accordion = /*#__PURE__*/function () {
+  function Accordion(accordionSelectors) {
+    Accordion_classCallCheck(this, Accordion);
+    this._accordionButtonElements = Accordion_toConsumableArray(document.querySelectorAll(accordionSelectors.accordionButton));
+  }
+  Accordion_createClass(Accordion, [{
+    key: "_toggleAccordion",
+    value: function _toggleAccordion(element) {
+      var currentButtonAtrElement = element.getAttribute('aria-expanded');
+      console.log(currentButtonAtrElement);
+      for (var i = 0; i < this._accordionButtonElements.length; i++) {
+        this._accordionButtonElements[i].setAttribute('aria-expanded', 'false');
+      }
+      if (currentButtonAtrElement === 'false') {
+        element.setAttribute('aria-expanded', 'true');
+      }
+    }
+  }, {
+    key: "setEventListener",
+    value: function setEventListener() {
+      var _this = this;
+      this._accordionButtonElements.forEach(function (element) {
+        element.addEventListener('click', function () {
+          return _this._toggleAccordion(element);
+        });
+      });
+    }
+  }]);
+  return Accordion;
+}();
 ;// CONCATENATED MODULE: ./src/js/components/RoleCard.js
 function RoleCard_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function RoleCard_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -288,7 +328,11 @@ var OFFERS_ITEM_SELECTOR_CONFIG = {
   titleSelector: '.tabs__content-title',
   contentSelector: '.tabs__content-text'
 };
+var ACCORDION_SELECTOR_CONFIG = {
+  accordionButton: '.accordion__header'
+};
 ;// CONCATENATED MODULE: ./src/js/index.js
+
 
 
 
@@ -318,10 +362,11 @@ var filterOffers = new FilterOffers(offersData_namespaceObject, BUTTON_TABS_CONF
   }
 });
 filterOffers.setEventListeners();
-console.log(filterOffers.renderData());
+var accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
+accordion.setEventListener();
 ;// CONCATENATED MODULE: ./src/app.js
 
 
 /******/ })()
 ;
-//# sourceMappingURL=scripts.5be84c4c.js.map
+//# sourceMappingURL=scripts.2d8b8a81.js.map
