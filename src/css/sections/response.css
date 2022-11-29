@@ -2,6 +2,12 @@
   padding: 60px 93px 43px;
   background-color: var(--white-color);
 }
+@media screen and (max-width: 700px) {
+  .response {
+    padding: 24px 28px 32px;
+    margin: 0;
+  }
+}
 .response__title {
   margin: 0;
   font-size: 42px;
@@ -9,12 +15,25 @@
   font-weight: 500;
   max-width: 60%;
 }
+@media screen and (max-width: 800px) {
+  .response__title {
+    font-size: 24px;
+    line-height: 32px;
+    max-width: 100%;
+  }
+}
 .response__description {
-  margin: 24px 0 0 0;
+  margin: 8px 0 0 0;
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
   color: #808080;
+}
+@media screen and (max-width: 800px) {
+  .response__description {
+    font-size: 14px;
+    line-height: 18px;
+  }
 }
 .response__form {
   padding-top: 22px;
@@ -37,6 +56,11 @@
   line-height: 20px;
   font-family: var(--ya-text-font);
 }
+@media screen and (max-width: 800px) {
+  .response__select, .response__input, .response__textarea {
+    margin-top: 8px;
+  }
+}
 .response__input {
   width: 278px;
   height: 18px;
@@ -56,14 +80,25 @@
   padding: 20px 16px;
   border: 2px solid #E0E0E0;
 }
+@media screen and (max-width: 800px) {
+  .response__textarea {
+    padding: 12px 12px;
+    width: 286px;
+  }
+}
 /* .response__input:focus-visible {
   outline: none;
   border-color: #000;
 } */
 .response__btn {
-  max-width: 350px;
+  max-width: 315px;
+  max-height: 60px;
 }
-
+@media screen and (max-width: 870px) {
+  .response__btn {
+    margin-top: 16px;
+  }
+}
 .response__checkbox {
   width: 24px;
   height: 24px;
@@ -79,6 +114,12 @@
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 870px) {
+  .response__container-2 {
+    margin-top: 16px;
+    flex-direction: column;
+  }
+}
 .response__extra-container {
   display: flex;
 }
@@ -87,7 +128,7 @@
   margin-left: 15px;
   font-weight: 500;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 28px;
   color: #808080;
 }
 .response__checkbox-2-text {
@@ -96,13 +137,36 @@
   font-size: 12px;
   line-height: 18px;
   margin-left: 15px;
+  margin-right: 98px;
   color: #808080;
+}
+@media screen and (max-width: 800px) {
+  .response__checkbox-2-text {
+    margin-right: 0;
+  }
 }
 .response__container-for-inputs {
   display: flex;
  flex-wrap: wrap;
  justify-content: space-between;
 }
+@media screen and (max-width: 800px) {
+  .response__container-for-inputs {
+    padding-top: 19px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .response__container-for-inputs {
+    /* justify-content: center; */
+  }
+}
 .response__addfile {
   margin-top: 12px;
+  width: 273px; /* от перескоков */
+  
+}
+@media screen and (max-width: 800px) {
+  .response__addfile {
+    margin-top: 4px;
+  }
 }
