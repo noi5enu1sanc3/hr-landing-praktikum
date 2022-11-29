@@ -14,7 +14,7 @@ export default class FilterOffers {
     this._activeFilters = []; //массив условий, по которым производится фильтрация
   }
 
-  renderData(data) {
+  renderData(data = this._data) {
     this._rendererData(data);
   }
 

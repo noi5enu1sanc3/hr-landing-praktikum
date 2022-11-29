@@ -57,12 +57,14 @@ const offersList = new List({
   }
 }, OFFERS_ITEM_SELECTOR_CONFIG);
 
+
 const filterOffers = new FilterOffers(offersData, BUTTON_TABS_CONFIG, {
   rendererData: (data) => {
     offersList.clearList();
     offersList.render(data);
   }
 });
+
 filterOffers.setEventListeners();
 
 console.log(filterOffers.renderData());
