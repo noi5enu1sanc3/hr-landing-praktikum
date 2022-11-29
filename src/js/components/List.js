@@ -13,4 +13,8 @@ export class List {
   addItem(element) {
     this._containerElement.prepend(element);
   }
+
+  clearList() {
+    this._containerElement.innerHTML = '';
+  }
 }

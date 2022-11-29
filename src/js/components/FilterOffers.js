@@ -1,54 +1,49 @@
 export default class FilterOffers {
-  constructor(data, buttonSelectors) {
+  constructor(data, buttonSelectors, { rendererData }) {
     this._data = data;
-    console.log(this._data);
+    this._rendererData = rendererData;
+
     this._buttonCheckboxElements = [...document.querySelectorAll(buttonSelectors.buttonCheckboxSelector)];
     this._buttonRadioElements = [...document.querySelectorAll(buttonSelectors.buttonRadioSelector)];
 
-    this._filterData = [];
     this._activeFilters = [];
+  }
+
+  renderData(data) {
+    this._rendererData(data);
   }
 
 
   _getFilterData() {
-    const data = this._data.filter(item => {
-      this._activeFilters.forEach(filterItem => {
-        console.log(filterItem);
-        return filterItem === item.post;
-      })
-    })
-
-    this._addData(data);
-  }
-
-  _addData(data) {
-    this._filterData.push(...data);
-    console.log(this._filterData);
-  }
-
-  _deleteByPost(data, attribute) {
-    this._filterData = this._filterData.filter(item => item.post !== attribute);
-    console.log(this._filterData);
-  }
-
-  _deleteByDirection(data, attribute) {
-    this._filterData = this._filterData.filter(item => item.direction !== attribute);
-    console.log(this._filterData);
+      return this._data.filter(
+        offer =>
+          (this._activeFilters.some(
+            filter => filter === 'mentor' || filter === 'reviewer'
+          )
+            ? this._activeFilters.includes(offer.post)
+            : true)
+          &&
+          (this._activeFilters.some(
+            filter =>
+              this._activeFilters.length !== 0 &&
+              filter !== 'mentor' &&
+              filter !== 'reviewer'
+          )
+            ? this._activeFilters.includes(offer.direction)
+            : true)
+      );
   }
 
   _handleCheckboxFilter(event) {
     event.target.classList.toggle('tabs__btn_active');
 
-    // Получаем фильтр в стейт
     if (this._isButtonActive(event.target)) {
       this._activeFilters.push(this._getAttribute(event.target));
     } else {
       this._activeFilters = this._activeFilters.filter(item => item !== this._getAttribute(event.target));
     }
-
+    this.renderData(this._getFilterData());
     console.log(this._activeFilters);
-
-   this._getFilterData();
 
   }
 

@@ -43,8 +43,6 @@ const roleCardRight = new RoleCard(
 );
 roleCardRight.setEventListeners();
 
-const filterOffers = new FilterOffers(offersData, BUTTON_TABS_CONFIG);
-filterOffers.setEventListeners();
 
 // Создание офера
 const createOffer = (data) => {
@@ -59,4 +57,12 @@ const offersList = new List({
   }
 }, OFFERS_ITEM_SELECTOR_CONFIG);
 
-offersList.render(offersData);
+const filterOffers = new FilterOffers(offersData, BUTTON_TABS_CONFIG, {
+  rendererData: (data) => {
+    offersList.clearList();
+    offersList.render(data);
+  }
+});
+filterOffers.setEventListeners();
+
+console.log(filterOffers.renderData());
