@@ -65,7 +65,9 @@
   align-self: center;
   border-radius: 50%;
   border: 2px solid var(--black-color);
-  background: url("../../uploads/images/close-icon-cross.svg") no-repeat center;
+  background: url("../../uploads/images/close-icon-cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
   width: 60px;
   height: 60px;
   cursor: pointer;
@@ -143,6 +145,7 @@
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.5px;
+  color: var(--black-ya-color);
 }
 
 .roles__title-role {
@@ -151,17 +154,18 @@
 }
 
 .roles__title_accent_yellow {
-  color: #ffcd00;
+  color: var(--yandex-color);
 }
 
 .roles__title_accent_aquamarine {
-  color: #35d29e;
+  color: var(--shamrock-color);
 }
 
 .roles__description {
   margin: 0;
   font-size: 24px;
   line-height: 1.2;
+  color: var(--black-ya-color);
 }
 
 .roles__text-list {
@@ -176,6 +180,10 @@
   word-wrap: break-word;
   font-size: 24px;
   line-height: 1.5;
+}
+
+.roles__details-content-text {
+  color: var(--black-ya-color);
 }
 
 .roles__details-text {
