@@ -3,3 +3,9 @@
   box-sizing: border-box;
   border-radius: var(--corners-radius);
 }
+
+@media screen and (max-width: 576px){
+  .content__item {
+    margin: 8px auto 0;
+  }
+}

@@ -1,6 +1,7 @@
 import FilterOffers from './components/FilterOffers';
 import { Offer } from './components/Offer';
 import { List } from './components/List';
+import { Accordion } from './components/Accordion';
 import RoleCard from './components/RoleCard';
 import offersData from "./utils/offersData.json";
 
@@ -9,7 +10,9 @@ import {
   ROLE_CARD_CLASS_CONFIG,
   BUTTON_TABS_CONFIG,
   OFFERS_ITEM_SELECTOR_CONFIG,
+  ACCORDION_SELECTOR_CONFIG,
 } from './utils/constants';
+
 
 const roleCardLeft = new RoleCard(
   ROLE_CARD_SELECTOR_CONFIG.leftCardSelector,
@@ -67,4 +70,5 @@ const filterOffers = new FilterOffers(offersData, BUTTON_TABS_CONFIG, {
 
 filterOffers.setEventListeners();
 
-console.log(filterOffers.renderData());
+const accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
+accordion.setEventListener();
