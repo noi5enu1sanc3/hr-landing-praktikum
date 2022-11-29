@@ -6,6 +6,7 @@
   .response {
     padding: 24px 28px 32px;
     margin: 0;
+    width: 100%;
   }
 }
 .response__title {
