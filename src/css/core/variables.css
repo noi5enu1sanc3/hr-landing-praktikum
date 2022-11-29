@@ -7,7 +7,10 @@
   --moderate-orange-color: #ed883b;
   --yandex-color: #ffcd00;
   --shamrock-color: #45CEA2;
-
   --corners-radius: 24px;
   --ya-text-font: "YS Text", "Helvetica Neue", helvetica, sans-serif;
+  --xl-size: 1280px;
+  --lg-size: 1110px;
+  --md-size: 800px;
+  --xs-size: 576px;
 }
