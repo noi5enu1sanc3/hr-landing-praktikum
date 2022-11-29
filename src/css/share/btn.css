@@ -17,11 +17,11 @@
 }
 
 .btn_theme_dark {
-  background-color: var(--black-color);
+  background-color: var(--black-ya-color);
   color: var(--white-color);
 }
 
 .btn_theme_light {
   background-color: var(--white-color);
-  color: var(--black-color);
+  color: var(--black-ya-color);
 }
