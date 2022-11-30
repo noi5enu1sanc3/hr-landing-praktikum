@@ -73,6 +73,10 @@
   color: var(--grey-text-color);
 }
 
+.job-highlights__btn {
+  align-self: center;
+}
+
 @media screen and (max-width: 1110px) {
   .job-highlights {
     padding: 40px 60px 42px;
