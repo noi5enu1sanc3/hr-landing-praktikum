@@ -24,6 +24,7 @@ export const BUTTON_TABS_CONFIG = {
   buttonRadioSelector: '.tabs__btn-radio',
   buttonResetSelector: '.tabs__btn-reset',
   activeButtonClass: 'tabs__btn_active',
+  hiddenResetButtonClass: 'tabs__btn-reset_hidden',
 };
 
 export const OFFERS_ITEM_SELECTOR_CONFIG = {

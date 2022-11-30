@@ -15,13 +15,14 @@ export default class FilterOffers {
     );
 
     this._activeButtonClass = buttonsConfig.activeButtonClass;
+    this._hiddenResetButtonClass = buttonsConfig.hiddenResetButtonClass;
 
     this._shouldFilterByPost = filterUtils.filterByPost;
     this._shouldFilterByDirection = filterUtils.filterByDirection;
     this._shouldFilterBySalary = filterUtils.filterBySalary;
 
-    this._filteringBy = new Set(); //набор уникальных значений, по которым производится фильтрация: должность, направление, вознаграждение
-    this._activeFilters = []; //массив условий, по которым производится фильтрация
+    this._filteringBy = new Set(); //набор уникальных типов, по которым производится фильтрация: должность, направление, вознаграждение
+    this._activeFilters = []; //массив всех условий, по которым производится фильтрация
   }
 
   _resetFilters() {
@@ -36,7 +37,14 @@ export default class FilterOffers {
     this.renderData(this._getFilterData());
   }
 
+  _handleResetButtonDisplay() {
+    this._activeFilters.length === 0
+      ? this._buttonResetElement.classList.add(this._hiddenResetButtonClass)
+      : this._buttonResetElement.classList.remove(this._hiddenResetButtonClass);
+  }
+
   renderData(data = this._data) {
+    this._handleResetButtonDisplay();
     this._rendererData(data);
   }
 

@@ -31,6 +31,10 @@
   letter-spacing: -0.5px;
 }
 
+.tabs__btn-reset_hidden {
+  display: none;
+}
+
 .tabs__description {
   grid-column: 1/2;
   color: #bfbfbf;
