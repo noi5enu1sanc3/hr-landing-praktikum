@@ -44,3 +44,8 @@ export const BURGER_NAME_CONFIG = {
   burgerClosingButtonName: 'header__menu-close-btn',
   headerNavigationMenuName: 'header__menu',
 };
+
+export const VIDEO_SELECTOR_CONFIG = {
+  videoSelector: '.video-history__video',
+  videoButtonSelector: '.video-history__btn',
+}

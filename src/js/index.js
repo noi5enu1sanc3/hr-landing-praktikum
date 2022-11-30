@@ -17,9 +17,10 @@ import {
   BUTTON_TABS_CONFIG,
   OFFERS_ITEM_SELECTOR_CONFIG,
   ACCORDION_SELECTOR_CONFIG,
-  BURGER_NAME_CONFIG,
+  BURGER_NAME_CONFIG, VIDEO_SELECTOR_CONFIG,
 } from './utils/constants';
 import { Burger } from './components/Burger';
+import { VideoLoad } from './components/VideoLoad';
 
 const roleCardLeft = new RoleCard(
   ROLE_CARD_SELECTOR_CONFIG.leftCardSelector,
@@ -96,3 +97,6 @@ accordion.setEventListener();
 
 const burger = new Burger(BURGER_NAME_CONFIG);
 burger.setEventListeners();
+
+const video = new VideoLoad(VIDEO_SELECTOR_CONFIG);
+video.setEventListener();
