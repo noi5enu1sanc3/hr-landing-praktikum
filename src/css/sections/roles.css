@@ -52,13 +52,9 @@
 }
 
 .roles__item_closed-right {
-  position: absolute;
-  top: 0;
-  right: -100;
   z-index: 0;
   opacity: 0;
   display: none;
-  width: 0;
 }
 
 .roles__main {
@@ -295,6 +291,22 @@
 
   .roles__open-btn {
     display: none;
+  }
+
+  .roles__close-btn {
+    display: none;
+  }
+
+  .roles__item_closed-left {
+    z-index: 1;
+    opacity: 1;
+    display: flex;
+  }
+
+  .roles__item_closed-right {
+    z-index: 1;
+    opacity: 1;
+    display: flex;
   }
 
   .roles__details {
