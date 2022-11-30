@@ -8,3 +8,9 @@
     width: calc(100% - 20px);
   }
 }
+
+@media screen and (max-width: 375px) {
+  .inner-wrapper {
+    width: 100%;
+  }
+}

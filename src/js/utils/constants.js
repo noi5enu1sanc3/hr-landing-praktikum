@@ -30,7 +30,7 @@ export const BUTTON_TABS_CONFIG = {
 export const OFFERS_ITEM_SELECTOR_CONFIG = {
   listSelector: '.tabs__content-list',
   itemTemplateSelector: '.tabs__content-item-template',
-  itemSelector: '.tabs__content-item',
+  itemSelector: '.tabs__content-link',
   titleSelector: '.tabs__content-title',
   contentSelector: '.tabs__content-text',
 };

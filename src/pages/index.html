@@ -326,32 +326,38 @@
             </ul>
             <ul class="tabs__navigation-list">
               <li class="tabs__navigation-item">
-                <button type="button" class="tabs__btn tabs__btn-radio" data-check="35000">от 35 000</button>
+                <button type="button" class="tabs__btn tabs__btn-radio" data-check="35000">от 35 000 р</button>
               </li>
               <li class="tabs__navigation-item">
-                <button type="button" class="tabs__btn tabs__btn-radio" data-check="40000">от 40 000</button>
+                <button type="button" class="tabs__btn tabs__btn-radio" data-check="40000">от 40 000 р</button>
               </li>
               <li class="tabs__navigation-item">
-                <button type="button" class="tabs__btn tabs__btn-radio" data-check="45000">от 45 000</button>
+                <button type="button" class="tabs__btn tabs__btn-radio" data-check="45000">от 45 000 р</button>
               </li>
               <li class="tabs__navigation-item">
-                <button type="button" class="tabs__btn tabs__btn-radio" data-check="50000">от 50 000</button>
+                <button type="button" class="tabs__btn tabs__btn-radio" data-check="50000">от 50 000 р</button>
               </li>
             </ul>
           </nav>
         </div>
         <div class="tabs__content">
           <ul class="tabs__content-list">
-            <li class="tabs__content-item tabs__content-item_button">
+            <li class="tabs__content-link tabs__content-item_button">
               <button type="button" class="content-item__btn content-item__btn_direction_back"><span
                   class="content-item__btn-text">Назад</span></button>
             </li>
-            <li class="tabs__content-item tabs__content-item_button">
+            <li class="tabs__content-link tabs__content-item_button">
               <button type="button" class="content-item__btn content-item__btn_direction_next"><span
                   class="content-item__btn-text">Далее</span></button>
             </li>
           </ul>
           <nav class="tabs__pagination">
+            <div class="tabs__pagination-buttons">
+              <button type="button" class="content-item__btn content-item__btn_direction_back"><span
+                  class="content-item__btn-text">Назад</span></button>
+              <button type="button" class="content-item__btn content-item__btn_direction_next"><span
+                  class="content-item__btn-text">Далее</span></button>
+            </div>
             <ul class="tabs__pagination-list">
               <li class="tabs__pagination-item">1</li>
               <li class="tabs__pagination-item tabs__pagination-item_active">2</li>
@@ -627,10 +633,12 @@
   </footer>
 </body>
 <template class="tabs__content-item-template">
-  <li class="tabs__content-item">
-    <h3 class="tabs__content-title"></h3>
-    <p class="tabs__content-text"></p>
-    <p class="tabs__content-text"></p>
+  <li class="tabs__content-link">
+    <a href="" class="tabs__content-link">
+      <h3 class="tabs__content-title"></h3>
+      <p class="tabs__content-text"></p>
+      <p class="tabs__content-text"></p>
+    </a>
   </li>
 </template>
 
