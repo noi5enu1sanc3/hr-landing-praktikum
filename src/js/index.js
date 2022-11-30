@@ -2,8 +2,10 @@ import FilterOffers from './components/FilterOffers';
 import { Offer } from './components/Offer';
 import { List } from './components/List';
 import { Accordion } from './components/Accordion';
+import Quiz from './components/Quiz';
 import RoleCard from './components/RoleCard';
 import offersData from './utils/offersData.json';
+import quizData from './utils/quizData.json';
 
 import {
   filterByPost,
@@ -18,6 +20,8 @@ import {
   OFFERS_ITEM_SELECTOR_CONFIG,
   ACCORDION_SELECTOR_CONFIG,
   BURGER_NAME_CONFIG,
+  QUIZ_BUTTONS_CONFIG,
+  QUIZ_CONTENT_CONFIG,
 } from './utils/constants';
 import { Burger } from './components/Burger';
 
@@ -96,3 +100,9 @@ accordion.setEventListener();
 
 const burger = new Burger(BURGER_NAME_CONFIG);
 burger.setEventListeners();
+
+
+//квиз
+const quiz = new Quiz(QUIZ_BUTTONS_CONFIG, QUIZ_CONTENT_CONFIG, quizData);
+quiz.setEventListeners();
+quiz.startQuiz();

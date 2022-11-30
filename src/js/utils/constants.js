@@ -44,3 +44,22 @@ export const BURGER_NAME_CONFIG = {
   burgerClosingButtonName: 'header__menu-close-btn',
   headerNavigationMenuName: 'header__menu',
 };
+
+export const QUIZ_BUTTONS_CONFIG = {
+  progressButtonsSelector: '.quiz__progress-bar-item',
+  optionButtonsSelector: '.quiz__option',
+  currentProgressClass: 'quiz__progress-bar-item_active',
+  restartButtonSelector: '.quiz__restart-btn',
+}
+
+export const QUIZ_CONTENT_CONFIG = {
+  quizBlockSelector: '.quiz__questions-block',
+  resultBlockSelector: '.quiz__result-block',
+  resultTextSelector: '.quiz__result-role',
+  resultYellowTextClass: '.quiz__result-role_accent_yellow',
+  resultAquamarineTextClass: '.quiz__result-role_accent_aquamarine',
+  questionNumberSelector: '.quiz__question-number',
+  questionTextSelector: '.quiz__question',
+  optionsTextSelector: '.quiz__option',
+  hiddenContentClass: 'quiz__hidden',
+}
