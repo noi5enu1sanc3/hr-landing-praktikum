@@ -23,11 +23,12 @@ var FilterOffers = /*#__PURE__*/function () {
     this._buttonRadioElements = _toConsumableArray(document.querySelectorAll(buttonsConfig.buttonRadioSelector));
     this._buttonResetElement = document.querySelector(buttonsConfig.buttonResetSelector);
     this._activeButtonClass = buttonsConfig.activeButtonClass;
+    this._hiddenResetButtonClass = buttonsConfig.hiddenResetButtonClass;
     this._shouldFilterByPost = filterUtils.filterByPost;
     this._shouldFilterByDirection = filterUtils.filterByDirection;
     this._shouldFilterBySalary = filterUtils.filterBySalary;
-    this._filteringBy = new Set(); //набор уникальных значений, по которым производится фильтрация: должность, направление, вознаграждение
-    this._activeFilters = []; //массив условий, по которым производится фильтрация
+    this._filteringBy = new Set(); //набор уникальных типов, по которым производится фильтрация: должность, направление, вознаграждение
+    this._activeFilters = []; //массив всех условий, по которым производится фильтрация
   }
   _createClass(FilterOffers, [{
     key: "_resetFilters",
@@ -44,9 +45,15 @@ var FilterOffers = /*#__PURE__*/function () {
       this.renderData(this._getFilterData());
     }
   }, {
+    key: "_handleResetButtonDisplay",
+    value: function _handleResetButtonDisplay() {
+      this._activeFilters.length === 0 ? this._buttonResetElement.classList.add(this._hiddenResetButtonClass) : this._buttonResetElement.classList.remove(this._hiddenResetButtonClass);
+    }
+  }, {
     key: "renderData",
     value: function renderData() {
       var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this._data;
+      this._handleResetButtonDisplay();
       this._rendererData(data);
     }
   }, {
@@ -303,7 +310,7 @@ var RoleCard = /*#__PURE__*/function () {
 }();
 
 ;// CONCATENATED MODULE: ./src/js/utils/offersData.json
-const offersData_namespaceObject = JSON.parse('[{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"design","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000}]');
+const offersData_namespaceObject = JSON.parse('[{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000}]');
 ;// CONCATENATED MODULE: ./src/js/utils/filterHelper.js
 var filterByPost = function filterByPost(data) {
   return data.some(function (item) {
@@ -345,7 +352,8 @@ var BUTTON_TABS_CONFIG = {
   buttonCheckboxSelector: '.tabs__btn-checkbox',
   buttonRadioSelector: '.tabs__btn-radio',
   buttonResetSelector: '.tabs__btn-reset',
-  activeButtonClass: 'tabs__btn_active'
+  activeButtonClass: 'tabs__btn_active',
+  hiddenResetButtonClass: 'tabs__btn-reset_hidden'
 };
 var OFFERS_ITEM_SELECTOR_CONFIG = {
   listSelector: '.tabs__content-list',
@@ -450,4 +458,4 @@ burger.setEventListeners();
 
 /******/ })()
 ;
-//# sourceMappingURL=scripts.b3d9e8b4.js.map
+//# sourceMappingURL=scripts.de325aaa.js.map
