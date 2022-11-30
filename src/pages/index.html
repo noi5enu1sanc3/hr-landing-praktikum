@@ -441,125 +441,121 @@
     </ul>
   </section>
 
-  <!--Response form section-->
-  <section class="response inner-wrapper content__item">
-    <h2 class="response__text response__title">
-      Не&nbsp;нашли себя в&nbsp;открытых предложениях?
-    </h2>
-    <p class="response__text response__description">
-      Данные необходимы для оформления оплаты и будут указаны в вашем
-      сертификате.
-    </p>
-    <form
-        name="candidate-response"
-        class="response__form"
-        id="response-form"
-    >
-      <fieldset class="response__inputs" form="response-form">
-        <input
-            type="text"
-            placeholder="Имя"
-            name="name"
-            class="response__input"
-            required
-        />
-        <input
-            type="text"
-            placeholder="Фамилия"
-            name="surname"
-            class="response__input"
-            required
-        />
-        <input
-            type="text"
-            placeholder="Выберите направление (факультет)"
-            name="role"
-            class="response__input"
-            required
-        />
-        <input
-            type="tel"
-            placeholder="Телефон"
-            name="tel"
-            class="response__input"
-            required
-        />
-        <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            class="response__input"
-            required
-        />
-      </fieldset>
-      <button class="btn btn_theme_dark response__btn" type="submit">
-        Далее
-      </button>
-    </form>
-  </section>
-</main>
-<footer class="footer inner-wrapper">
-  <div class="footer__top-of-footer">
-    <div class="footer__column-1">
-      <img src="<%=require('../uploads/images/RU-logo-desktop.svg')%>" alt="логотип" class="footer__footer-logo">
-      <p class="footer__telephone">8-800-700-93-29</p>
-      <p class="footer__text-free">Звонок по России бесплатный</p>
+    <!--Response form section-->
+    <section class="response inner-wrapper content__item">
+      <h2 class="response__text response__title">
+        Отклик на вакансию
+      </h2>
+      <p class="response__text response__description">
+        Бывает, что интересующая вакания сейчас занята, но не расстраивайся, мы всегда ищем талантливых людей.<br />
+        Поставь галочку ниже, оставь свои данные и мы с тобой свяжемся в ближайшее время.
+      </p>
+      <form name="candidate-response" class="response__form" id="response-form">
+        <fieldset class="response__inputs" form="response-form">
+          <div class="response__container-1">
+            <input type="checkbox" checked="checked" name="dontfind" class="response__checkbox" />
+            <p class="response__checkbox-1-text">Не нашел интересующую вакансию</p>
+          </div>
+
+          <div class="response__container-for-inputs">
+            <select name="profession" id="" class="response__select">
+              <option value="nastavnik">Роль</option>
+              <option value="sometext">Наставник</option>
+            </select>
+            <select name="kind-of-art" id="" class="response__select">
+              <option value="designйн">Направление</option>
+              <option value="sometext">Дизайн</option>
+            </select>
+            <select name="job" id="" class="response__select">
+              <option value="vacancy" placeholder="Вакансия">Вакансия</option>
+              <option value="sometext">Специализация</option>
+            </select>
+
+            <input type="text" placeholder="Имя" value="" name="name" class="response__input" required />
+            <input type="tel" placeholder="Телефон" value="" name="tel" class="response__input"
+              required />
+            <input type="email" placeholder="Эл. адрес" value="" name="email"
+              class="response__input" required />
+          </div>
+
+          <textarea class="response__textarea" rows="5" cols="20">Стек технологий (для программистов) или твои навыки, любая информация, которой ты хочешь поделиться
+          </textarea>
+          <input class="response__addfile" type="file" name="addfile">
+          <div class="response__container-2">
+
+            <div class="response__extra-container">
+              <input type="checkbox" name="agreement"
+                class="response__checkbox response__checkbox-2" />
+              <p class="response__checkbox-2-text">Я даю согласие АНО ДПО «ШАД» и ООО «ЯНДЕКС» на обработку указанных
+                данных
+                для целей рассмотрения анкеты и обратной связи по ней.</p>
+            </div>
+
+            <button class="btn btn_theme_dark response__btn" type="submit">
+              Отправить
+            </button>
+          </div>
+
+        </fieldset>
+
+      </form>
+    </section>
+  </main>
+  <footer class="footer inner-wrapper">
+    <div class="footer__top-of-footer">
+      <div class="footer__column-1">
+        <img src="<%=require('../uploads/images/RU-logo-desktop.svg')%>" alt="логотип" class="footer__footer-logo">
+        <p class="footer__telephone">8-800-700-93-29</p>
+        <p class="footer__text-free">Звонок по России бесплатный</p>
+      </div>
+      <div class="footer__column-2">
+        <ul class="footer__ul">
+          <h2 class="footer__h">header</h2>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+        </ul>
+        <ul class="footer__ul">
+          <h2 class="footer__h">header</h2>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+        </ul>
+        <ul class="footer__ul">
+          <h2 class="footer__h">header</h2>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+        </ul>
+        <ul class="footer__ul">
+          <h2 class="footer__h">header</h2>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+          <li>testMoreAndMore</li>
+        </ul>
+      </div>
     </div>
-    <div class="footer__column-2">
-      <ul class="footer__ul">
-        <h2 class="footer__h">header</h2>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-      </ul>
-      <ul class="footer__ul">
-        <h2 class="footer__h">header</h2>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-      </ul>
-      <ul class="footer__ul">
-        <h2 class="footer__h">header</h2>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-      </ul>
-      <ul class="footer__ul">
-        <h2 class="footer__h">header</h2>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-        <li>testMoreAndMore</li>
-      </ul>
+    <div class="footer__bottom-0f-footer">
+      <p class="footer__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi hic eum natus animi magni
+        id commodi est iusto excepturi alias illum possimus blanditiis qui optio nisi exercitationem velit, sapiente
+        sint!</p>
+      <p class="footer__all-rights">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi assumenda illum, a modi vero
+      </p>
     </div>
-  </div>
-  <div class="footer__bottom-0f-footer">
-    <p class="footer__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi hic eum natus animi magni
-      id commodi est iusto excepturi alias illum possimus blanditiis qui optio nisi exercitationem velit, sapiente
-      sint!</p>
-    <p class="footer__all-rights">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi assumenda illum, a modi vero
-    </p>
-  </div>
-</footer>
-<template class="tabs__content-item-template">
-  <li class="tabs__content-item">
-    <h3 class="tabs__content-title"></h3>
-    <p class="tabs__content-text"></p>
-    <p class="tabs__content-text"></p>
-  </li>
-</template>
+  </footer>
 </body>
 
 </html>
