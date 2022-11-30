@@ -16,20 +16,6 @@
   align-self: center;
 }
 
-.faq__art {
-  align-self: flex-end;
-  width: 64px;
-  height: 64px;
-  margin: 0 20px 0 0;
-}
-
-.faq__title + .faq__art {
-  align-self: flex-start;
-  width: 50px;
-  height: 52px;
-  margin: 0 0 0 20px;
-}
-
 @media screen and (max-width: 800px) {
   .faq {
     padding: 30px 60px 37px;
@@ -43,10 +29,6 @@
     text-align: left;
     font-size: 20px;
     line-height: 1.2;
-  }
-
-  .faq__art {
-    display: none;
   }
 }
 

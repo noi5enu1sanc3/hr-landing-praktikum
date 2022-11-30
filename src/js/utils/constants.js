@@ -45,6 +45,11 @@ export const BURGER_NAME_CONFIG = {
   headerNavigationMenuName: 'header__menu',
 };
 
+export const VIDEO_SELECTOR_CONFIG = {
+  videoSelector: '.video-history__video',
+  videoButtonSelector: '.video-history__btn',
+}
+
 export const QUIZ_BUTTONS_CONFIG = {
   progressButtonsSelector: '.quiz__progress-bar-item',
   optionButtonsSelector: '.quiz__option',

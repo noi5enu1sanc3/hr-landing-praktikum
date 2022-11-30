@@ -22,8 +22,10 @@ import {
   BURGER_NAME_CONFIG,
   QUIZ_BUTTONS_CONFIG,
   QUIZ_CONTENT_CONFIG,
+  VIDEO_SELECTOR_CONFIG,
 } from './utils/constants';
 import { Burger } from './components/Burger';
+import { VideoLoad } from './components/VideoLoad';
 
 const roleCardLeft = new RoleCard(
   ROLE_CARD_SELECTOR_CONFIG.leftCardSelector,
@@ -106,3 +108,6 @@ burger.setEventListeners();
 const quiz = new Quiz(QUIZ_BUTTONS_CONFIG, QUIZ_CONTENT_CONFIG, quizData);
 quiz.setEventListeners();
 quiz.startQuiz();
+
+const video = new VideoLoad(VIDEO_SELECTOR_CONFIG);
+video.setEventListener();
