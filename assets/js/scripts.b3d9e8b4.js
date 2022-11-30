@@ -13,17 +13,37 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 var FilterOffers = /*#__PURE__*/function () {
-  function FilterOffers(data, buttonSelectors, _ref) {
+  function FilterOffers(data, buttonsConfig, _ref, _ref2) {
     var rendererData = _ref.rendererData;
+    var filterUtils = _ref2.filterUtils;
     _classCallCheck(this, FilterOffers);
     this._data = data;
     this._rendererData = rendererData;
-    this._buttonCheckboxElements = _toConsumableArray(document.querySelectorAll(buttonSelectors.buttonCheckboxSelector));
-    this._buttonRadioElements = _toConsumableArray(document.querySelectorAll(buttonSelectors.buttonRadioSelector));
+    this._buttonCheckboxElements = _toConsumableArray(document.querySelectorAll(buttonsConfig.buttonCheckboxSelector));
+    this._buttonRadioElements = _toConsumableArray(document.querySelectorAll(buttonsConfig.buttonRadioSelector));
+    this._buttonResetElement = document.querySelector(buttonsConfig.buttonResetSelector);
+    this._activeButtonClass = buttonsConfig.activeButtonClass;
+    this._shouldFilterByPost = filterUtils.filterByPost;
+    this._shouldFilterByDirection = filterUtils.filterByDirection;
+    this._shouldFilterBySalary = filterUtils.filterBySalary;
     this._filteringBy = new Set(); //набор уникальных значений, по которым производится фильтрация: должность, направление, вознаграждение
     this._activeFilters = []; //массив условий, по которым производится фильтрация
   }
   _createClass(FilterOffers, [{
+    key: "_resetFilters",
+    value: function _resetFilters() {
+      var _this = this;
+      this._filteringBy.clear();
+      this._activeFilters = [];
+      this._buttonCheckboxElements.forEach(function (element) {
+        return element.classList.remove(_this._activeButtonClass);
+      });
+      this._buttonRadioElements.forEach(function (element) {
+        return element.classList.remove(_this._activeButtonClass);
+      });
+      this.renderData(this._getFilterData());
+    }
+  }, {
     key: "renderData",
     value: function renderData() {
       var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this._data;
@@ -32,25 +52,10 @@ var FilterOffers = /*#__PURE__*/function () {
   }, {
     key: "_updateFilterConditionsSet",
     value: function _updateFilterConditionsSet() {
-      var _this = this;
       //метод, обновляющий сет this._filteringBy
-      if (this._activeFilters.some(function (filter) {
-        return filter === 'mentor' || filter === 'reviewer';
-      })) {
-        this._filteringBy.add('post');
-      } else {
-        this._filteringBy.delete('post');
-      }
-      if (this._activeFilters.some(function (filter) {
-        return _this._activeFilters.length !== 0 && filter !== 'mentor' && filter !== 'reviewer' && typeof filter !== 'number';
-      })) {
-        this._filteringBy.add('direction');
-      } else {
-        this._filteringBy.delete('direction');
-      }
-      this._activeFilters.some(function (filter) {
-        return typeof filter === 'number';
-      }) ? this._filteringBy.add('salary') : this._filteringBy.delete('salary');
+      this._shouldFilterByPost(this._activeFilters) ? this._filteringBy.add('post') : this._filteringBy.delete('post');
+      this._shouldFilterByDirection(this._activeFilters) ? this._filteringBy.add('direction') : this._filteringBy.delete('direction');
+      this._shouldFilterBySalary(this._activeFilters) ? this._filteringBy.add('salary') : this._filteringBy.delete('salary');
       console.log(this._filteringBy);
     }
   }, {
@@ -71,7 +76,7 @@ var FilterOffers = /*#__PURE__*/function () {
     key: "_handleCheckboxFilter",
     value: function _handleCheckboxFilter(event) {
       var _this3 = this;
-      event.target.classList.toggle('tabs__btn_active');
+      event.target.classList.toggle(this._activeButtonClass);
       if (this._isButtonActive(event.target)) {
         this._activeFilters.push(this._getAttribute(event.target));
       } else {
@@ -84,7 +89,7 @@ var FilterOffers = /*#__PURE__*/function () {
   }, {
     key: "_isButtonActive",
     value: function _isButtonActive(button) {
-      return button.classList.contains('tabs__btn_active');
+      return button.classList.contains(this._activeButtonClass);
     }
   }, {
     key: "_getAttribute",
@@ -97,10 +102,10 @@ var FilterOffers = /*#__PURE__*/function () {
       var _this4 = this;
       this._buttonRadioElements.forEach(function (element) {
         if (element !== event.target) {
-          element.classList.remove('tabs__btn_active');
+          element.classList.remove(_this4._activeButtonClass);
         }
       });
-      event.target.classList.toggle('tabs__btn_active');
+      event.target.classList.toggle(this._activeButtonClass);
       if (this._isButtonActive(event.target) && !this._activeFilters.some(function (filter) {
         return filter === parseInt(_this4._getAttribute(event.target));
       })) {
@@ -129,6 +134,9 @@ var FilterOffers = /*#__PURE__*/function () {
         element.addEventListener('click', function (event) {
           return _this5._handleRadioFilter(event);
         });
+      });
+      this._buttonResetElement.addEventListener('click', function () {
+        return _this5._resetFilters();
       });
     }
   }]);
@@ -295,7 +303,23 @@ var RoleCard = /*#__PURE__*/function () {
 }();
 
 ;// CONCATENATED MODULE: ./src/js/utils/offersData.json
-const offersData_namespaceObject = JSON.parse('[{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"design","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"Менеджер проектов","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000}]');
+const offersData_namespaceObject = JSON.parse('[{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"design","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000}]');
+;// CONCATENATED MODULE: ./src/js/utils/filterHelper.js
+var filterByPost = function filterByPost(data) {
+  return data.some(function (item) {
+    return item === 'mentor' || item === 'reviewer';
+  });
+};
+var filterByDirection = function filterByDirection(data) {
+  return data.some(function (item) {
+    return item === 'management' || item === 'marketing' || item === 'design' || item === 'programming';
+  });
+};
+var filterBySalary = function filterBySalary(data) {
+  return data.some(function (item) {
+    return typeof item === 'number';
+  });
+};
 ;// CONCATENATED MODULE: ./src/js/utils/constants.js
 var ROLE_CARD_SELECTOR_CONFIG = {
   leftCardSelector: '.roles__item_left',
@@ -319,7 +343,9 @@ var ROLE_CARD_CLASS_CONFIG = {
 };
 var BUTTON_TABS_CONFIG = {
   buttonCheckboxSelector: '.tabs__btn-checkbox',
-  buttonRadioSelector: '.tabs__btn-radio'
+  buttonRadioSelector: '.tabs__btn-radio',
+  buttonResetSelector: '.tabs__btn-reset',
+  activeButtonClass: 'tabs__btn_active'
 };
 var OFFERS_ITEM_SELECTOR_CONFIG = {
   listSelector: '.tabs__content-list',
@@ -331,7 +357,53 @@ var OFFERS_ITEM_SELECTOR_CONFIG = {
 var ACCORDION_SELECTOR_CONFIG = {
   accordionButton: '.accordion__header'
 };
+var BURGER_NAME_CONFIG = {
+  burgerOpeningButtonName: 'burger',
+  burgerClosingButtonName: 'header__menu-close-btn',
+  headerNavigationMenuName: 'header__menu'
+};
+;// CONCATENATED MODULE: ./src/js/components/Burger.js
+function Burger_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function Burger_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function Burger_createClass(Constructor, protoProps, staticProps) { if (protoProps) Burger_defineProperties(Constructor.prototype, protoProps); if (staticProps) Burger_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+var Burger = /*#__PURE__*/function () {
+  function Burger(burgerSelectors) {
+    Burger_classCallCheck(this, Burger);
+    this._burgerOpeningButtonName = burgerSelectors.burgerOpeningButtonName;
+    this._burgerClosingButtonName = burgerSelectors.burgerClosingButtonName;
+    this._headerNavigationMenuName = burgerSelectors.headerNavigationMenuName;
+    this._burgerOpeningButtonElement = document.querySelector(".".concat(this._burgerOpeningButtonName));
+    this._burgerClosingButtonElement = document.querySelector(".".concat(this._burgerClosingButtonName));
+    this._headerNavigationMenuElement = document.querySelector(".".concat(this._headerNavigationMenuName));
+  }
+  Burger_createClass(Burger, [{
+    key: "_openMenu",
+    value: function _openMenu() {
+      console.log(this._headerNavigationMenuElement);
+      this._headerNavigationMenuElement.classList.add("".concat(this._headerNavigationMenuName, "_is-active"));
+    }
+  }, {
+    key: "_closeMenu",
+    value: function _closeMenu() {
+      this._headerNavigationMenuElement.classList.remove("".concat(this._headerNavigationMenuName, "_is-active"));
+    }
+  }, {
+    key: "setEventListeners",
+    value: function setEventListeners() {
+      var _this = this;
+      this._burgerOpeningButtonElement.addEventListener('click', function () {
+        return _this._openMenu();
+      });
+      this._burgerClosingButtonElement.addEventListener('click', function () {
+        return _this._closeMenu();
+      });
+    }
+  }]);
+  return Burger;
+}();
 ;// CONCATENATED MODULE: ./src/js/index.js
+
+
 
 
 
@@ -360,14 +432,22 @@ var filterOffers = new FilterOffers(offersData_namespaceObject, BUTTON_TABS_CONF
     offersList.clearList();
     offersList.render(data);
   }
+}, {
+  filterUtils: {
+    filterByPost: filterByPost,
+    filterByDirection: filterByDirection,
+    filterBySalary: filterBySalary
+  }
 });
 filterOffers.setEventListeners();
 filterOffers.renderData(offersData_namespaceObject);
 var accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
+var burger = new Burger(BURGER_NAME_CONFIG);
+burger.setEventListeners();
 ;// CONCATENATED MODULE: ./src/app.js
 
 
 /******/ })()
 ;
-//# sourceMappingURL=scripts.0d5f6ad1.js.map
+//# sourceMappingURL=scripts.b3d9e8b4.js.map
