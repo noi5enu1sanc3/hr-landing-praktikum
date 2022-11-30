@@ -269,6 +269,132 @@ var Accordion = /*#__PURE__*/function () {
   }]);
   return Accordion;
 }();
+;// CONCATENATED MODULE: ./src/js/components/Quiz.js
+function Quiz_toConsumableArray(arr) { return Quiz_arrayWithoutHoles(arr) || Quiz_iterableToArray(arr) || Quiz_unsupportedIterableToArray(arr) || Quiz_nonIterableSpread(); }
+function Quiz_nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function Quiz_unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return Quiz_arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return Quiz_arrayLikeToArray(o, minLen); }
+function Quiz_iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function Quiz_arrayWithoutHoles(arr) { if (Array.isArray(arr)) return Quiz_arrayLikeToArray(arr); }
+function Quiz_arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function Quiz_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function Quiz_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function Quiz_createClass(Constructor, protoProps, staticProps) { if (protoProps) Quiz_defineProperties(Constructor.prototype, protoProps); if (staticProps) Quiz_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+var Quiz = /*#__PURE__*/function () {
+  function Quiz(buttonsConfig, quizContentConfig, data) {
+    Quiz_classCallCheck(this, Quiz);
+    this._progressButtons = Quiz_toConsumableArray(document.querySelectorAll(buttonsConfig.progressButtonsSelector));
+    this._optionButtons = Quiz_toConsumableArray(document.querySelectorAll(buttonsConfig.optionButtonsSelector));
+    this._currentProgressClass = buttonsConfig.currentProgressClass;
+    this._restartButton = document.querySelector(buttonsConfig.restartButtonSelector);
+    this._currentQuestionElement = document.querySelector(quizContentConfig.questionNumberSelector);
+    this._questionTextElement = document.querySelector(quizContentConfig.questionTextSelector);
+    this._optionElements = Quiz_toConsumableArray(document.querySelectorAll(quizContentConfig.optionsTextSelector));
+    this._quizBlockElement = document.querySelector(quizContentConfig.quizBlockSelector);
+    this._resultBlockElement = document.querySelector(quizContentConfig.resultBlockSelector);
+    this._resultTextElement = document.querySelector(quizContentConfig.resultTextSelector);
+    this._hiddenClass = quizContentConfig.hiddenContentClass;
+    this._aquamarineTextStyleClass = quizContentConfig.resultAquamarineTextClass;
+    this._yellowTextStyleClass = quizContentConfig.resultYellowTextClass;
+    this._data = data;
+    this._currentQuestion = 1;
+    this._result = 0; // if < 0 mentor, if > 0 reviewer
+  }
+  Quiz_createClass(Quiz, [{
+    key: "startQuiz",
+    value: function startQuiz() {
+      this._quizBlockElement.classList.remove(this._hiddenClass);
+      this._resultBlockElement.classList.add(this._hiddenClass);
+      this._currentQuestion = 1;
+      this._result = 0;
+      this._renderQuiz();
+    }
+  }, {
+    key: "_renderQuiz",
+    value: function _renderQuiz() {
+      this._renderCurrentQuizState(this._data[this._currentQuestion - 1]);
+    }
+  }, {
+    key: "_renderCurrentQuizState",
+    value: function _renderCurrentQuizState(item) {
+      this._renderProgressBar();
+      this._currentQuestionElement.textContent = this._currentQuestion;
+      this._question = item.question;
+      this._option1 = item.option1;
+      this._option2 = item.option2;
+      this._questionTextElement.textContent = this._question;
+      this._optionElements[0].textContent = this._option1.text;
+      this._optionElements[0].setAttribute('data-key', "".concat(this._option1.result));
+      this._optionElements[1].textContent = this._option2.text;
+      this._optionElements[1].setAttribute('data-key', "".concat(this._option2.result));
+    }
+  }, {
+    key: "_getQuestionNumber",
+    value: function _getQuestionNumber(element) {
+      return parseInt(element.getAttribute('data-number'));
+    }
+  }, {
+    key: "_renderQuestion",
+    value: function _renderQuestion() {
+      this._currentQuestionElement.textContent = this._currentQuestion;
+    }
+  }, {
+    key: "_renderProgressBar",
+    value: function _renderProgressBar() {
+      var _this = this;
+      this._progressButtons.forEach(function (button) {
+        return button.classList.remove(_this._currentProgressClass);
+      });
+      this._progressButtons.slice(0, this._currentQuestion).forEach(function (button) {
+        return button.classList.add(_this._currentProgressClass);
+      });
+    }
+  }, {
+    key: "_renderResult",
+    value: function _renderResult() {
+      if (this._result < 0) {
+        this._resultTextElement.classList.add(this._aquamarineTextStyleClass);
+        this._resultTextElement.textContent = 'Наставник';
+      } else {
+        this._resultTextElement.classList.add(this._yellowTextStyleClass);
+        this._resultTextElement.textContent = 'Ревьюер';
+      }
+      this._quizBlockElement.classList.add(this._hiddenClass);
+      this._resultBlockElement.classList.remove(this._hiddenClass);
+    }
+  }, {
+    key: "_addAnswer",
+    value: function _addAnswer(event) {
+      this._currentQuestion += 1;
+      this._renderQuestion();
+      this._renderProgressBar();
+      if (event.currentTarget.getAttribute('data-key') === 'mentor') {
+        this._result -= 1;
+      } else {
+        this._result += 1;
+      }
+      if (this._currentQuestion > 9) {
+        this._renderResult();
+      } else {
+        this._renderQuiz();
+      }
+    }
+  }, {
+    key: "setEventListeners",
+    value: function setEventListeners() {
+      var _this2 = this;
+      this._optionButtons.forEach(function (button) {
+        return button.addEventListener('click', function (event) {
+          return _this2._addAnswer(event);
+        });
+      });
+      this._restartButton.addEventListener('click', function () {
+        return _this2.startQuiz();
+      });
+    }
+  }]);
+  return Quiz;
+}();
+
 ;// CONCATENATED MODULE: ./src/js/components/RoleCard.js
 function RoleCard_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 function RoleCard_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -311,6 +437,8 @@ var RoleCard = /*#__PURE__*/function () {
 
 ;// CONCATENATED MODULE: ./src/js/utils/offersData.json
 const offersData_namespaceObject = JSON.parse('[{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000}]');
+;// CONCATENATED MODULE: ./src/js/utils/quizData.json
+const quizData_namespaceObject = JSON.parse('[{"question":"«У меня точно есть лидерские качества, я умею вдохновлять и вести людей за собой» — сказали бы так про себя?","option1":{"text":"Конечно! Что есть, то есть.","result":"mentor"},"option2":{"text":"Скорее нет, но хочу работать над этим.","result":"reviewer"}},{"question":"С лидерством разобрались, а вот умение поддержать и подбодрить человека у вас есть?","option1":{"text":"Да! Не знаю, откуда это во мне.","result":"mentor"},"option2":{"text":"Нет, обычно мне сложно подобрать нужные слова.","result":"reviewer"}},{"question":"Что выберете — живое общение или переписку?","option1":{"text":"Всегда за первое, однозначно!","result":"mentor"},"option2":{"text":"Второе. Почти всё можно легко обсудить в тексте.","result":"reviewer"}},{"question":"Только честно, у вас получается сохранять терпение и сосредоточенно выполнять монотонную работу?","option1":{"text":"О, нет… Не люблю таким заниматься.","result":"mentor"},"option2":{"text":"Да! Усидчивость — моё второе имя.","result":"reviewer"}},{"question":"Предположим, вас просят выступить перед аудиторией — ваша реакция?","option1":{"text":"Пф, меня и просить не надо! Дайте 10 минут на подготовку и могу начинать.","result":"mentor"},"option2":{"text":"Сделаю вид, что меня нет. Выступать — это дикий стресс.","result":"reviewer"}},{"question":"Разберём ещё одну ситуацию. Представим, вы проверяете домашнее задание студента, а в нём — катастрофическое количество ошибок. Что больше похоже на вас:","option1":{"text":"Найду этого студента и расскажу, как всё исправить. Готов объяснять, пока не поймёт на 100%.","result":"mentor"},"option2":{"text":"Отмечу все ошибки и покажу, что нужно исправить. Пусть ещё раз подумает и пересдаст работу.","result":"reviewer"}},{"question":"Как бы вы охарактеризовали этап, на котором вы сейчас находитесь?","option1":{"text":"Уже накопил кучу интересных кейсов и хочу ими поделиться!","result":"mentor"},"option2":{"text":"Пока нарабатываю личный опыт и коплю интересные кейсы в работе.","result":"reviewer"}},{"question":"На ваш взгляд, самое крутое в профессии учителя — это…","option1":{"text":"Получать кучу конфет и цветов на День Учителя.","result":"mentor"},"option2":{"text":"Ставить оценки в тетрадях красной ручкой!","result":"reviewer"}},{"question":"Какое действие тебе сейчас сильнее хочется осуществить?","option2":{"text":"Оценить тест","result":"mentor"},"option1":{"text":"Дать себе напутственную речь","result":"reviewer"}}]');
 ;// CONCATENATED MODULE: ./src/js/utils/filterHelper.js
 var filterByPost = function filterByPost(data) {
   return data.some(function (item) {
@@ -358,7 +486,7 @@ var BUTTON_TABS_CONFIG = {
 var OFFERS_ITEM_SELECTOR_CONFIG = {
   listSelector: '.tabs__content-list',
   itemTemplateSelector: '.tabs__content-item-template',
-  itemSelector: '.tabs__content-item',
+  itemSelector: '.tabs__content-link',
   titleSelector: '.tabs__content-title',
   contentSelector: '.tabs__content-text'
 };
@@ -369,6 +497,23 @@ var BURGER_NAME_CONFIG = {
   burgerOpeningButtonName: 'burger',
   burgerClosingButtonName: 'header__menu-close-btn',
   headerNavigationMenuName: 'header__menu'
+};
+var QUIZ_BUTTONS_CONFIG = {
+  progressButtonsSelector: '.quiz__progress-bar-item',
+  optionButtonsSelector: '.quiz__option',
+  currentProgressClass: 'quiz__progress-bar-item_active',
+  restartButtonSelector: '.quiz__restart-btn'
+};
+var QUIZ_CONTENT_CONFIG = {
+  quizBlockSelector: '.quiz__questions-block',
+  resultBlockSelector: '.quiz__result-block',
+  resultTextSelector: '.quiz__result-role',
+  resultYellowTextClass: '.quiz__result-role_accent_yellow',
+  resultAquamarineTextClass: '.quiz__result-role_accent_aquamarine',
+  questionNumberSelector: '.quiz__question-number',
+  questionTextSelector: '.quiz__question',
+  optionsTextSelector: '.quiz__option',
+  hiddenContentClass: 'quiz__hidden'
 };
 ;// CONCATENATED MODULE: ./src/js/components/Burger.js
 function Burger_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -419,6 +564,8 @@ var Burger = /*#__PURE__*/function () {
 
 
 
+
+
 var roleCardLeft = new RoleCard(ROLE_CARD_SELECTOR_CONFIG.leftCardSelector, ROLE_CARD_SELECTOR_CONFIG.rightCardSelector, ROLE_CARD_SELECTOR_CONFIG.visiblePartSelector, ROLE_CARD_SELECTOR_CONFIG.slidingPartSelector, ROLE_CARD_SELECTOR_CONFIG.slidingPartContentSelector, ROLE_CARD_SELECTOR_CONFIG.openButtonSelector, ROLE_CARD_SELECTOR_CONFIG.closeButtonSelector, ROLE_CARD_CLASS_CONFIG.openedContainerLeftClass, ROLE_CARD_CLASS_CONFIG.openedContentClass, ROLE_CARD_CLASS_CONFIG.cardOpenedClass, ROLE_CARD_CLASS_CONFIG.hidingPartRightClass, ROLE_CARD_CLASS_CONFIG.hiddenClass);
 roleCardLeft.setEventListeners();
 var roleCardRight = new RoleCard(ROLE_CARD_SELECTOR_CONFIG.rightCardSelector, ROLE_CARD_SELECTOR_CONFIG.leftCardSelector, ROLE_CARD_SELECTOR_CONFIG.visiblePartSelector, ROLE_CARD_SELECTOR_CONFIG.slidingPartSelector, ROLE_CARD_SELECTOR_CONFIG.slidingPartContentSelector, ROLE_CARD_SELECTOR_CONFIG.openButtonSelector, ROLE_CARD_SELECTOR_CONFIG.closeButtonSelector, ROLE_CARD_CLASS_CONFIG.openedContainerRightClass, ROLE_CARD_CLASS_CONFIG.openedContentClass, ROLE_CARD_CLASS_CONFIG.cardOpenedClass, ROLE_CARD_CLASS_CONFIG.hidingPartLeftClass, ROLE_CARD_CLASS_CONFIG.hiddenClass);
@@ -453,9 +600,14 @@ var accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
 var burger = new Burger(BURGER_NAME_CONFIG);
 burger.setEventListeners();
+
+//квиз
+var quiz = new Quiz(QUIZ_BUTTONS_CONFIG, QUIZ_CONTENT_CONFIG, quizData_namespaceObject);
+quiz.setEventListeners();
+quiz.startQuiz();
 ;// CONCATENATED MODULE: ./src/app.js
 
 
 /******/ })()
 ;
-//# sourceMappingURL=scripts.de325aaa.js.map
+//# sourceMappingURL=scripts.a223cd9c.js.map
