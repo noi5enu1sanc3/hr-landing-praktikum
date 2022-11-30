@@ -22,7 +22,8 @@ h5,
 h6,
 p,
 a,
-li {
+li,
+span {
   font-family: var(--ya-text-font);
   margin: 0;
   padding: 0;
