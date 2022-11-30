@@ -517,10 +517,8 @@
       <form name="candidate-response" class="response__form" id="response-form">
         <fieldset class="response__inputs" form="response-form">
           <div class="response__container-1">
-            <input type="checkbox" checked="checked" name="dontfind" class="response__checkbox" />
-            <p class="response__checkbox-1-text">
-              Не нашел интересующую вакансию
-            </p>
+            <input id="dontfind" type="checkbox" checked="checked" name="dontfind" class="response__checkbox" />
+            <label for="dontfind" class="response__label">Не нашел интересующую вакансию</label>
           </div>
 
           <div class="response__container-for-inputs">
@@ -545,15 +543,14 @@
           <textarea class="response__textarea" rows="5" cols="20">
 Стек технологий (для программистов) или твои навыки, любая информация, которой ты хочешь поделиться
           </textarea>
-          <input class="response__addfile" type="file" name="addfile" />
+          <input id="addfile" class="response__addfile" type="file" name="addfile" />
+          <label for="addfile">Прикрепить файл</label>
           <div class="response__container-2">
             <div class="response__extra-container">
-              <input type="checkbox" name="agreement" class="response__checkbox response__checkbox-2" />
-              <p class="response__checkbox-2-text">
-                Я даю согласие АНО ДПО «ШАД» и ООО «ЯНДЕКС» на обработку
+              <input id="agreement" type="checkbox" name="agreement" class="response__checkbox" />
+              <label for="agreement" class="response__label"> Я даю согласие АНО ДПО «ШАД» и ООО «ЯНДЕКС» на обработку
                 указанных данных для целей рассмотрения анкеты и обратной
-                связи по ней.
-              </p>
+                связи по ней.</label>
             </div>
 
             <button class="btn btn_theme_dark response__btn" type="submit">
