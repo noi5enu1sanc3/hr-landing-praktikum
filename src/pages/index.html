@@ -1,591 +1,364 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Открытые предложения в сопровождении Яндекс Практикума</title>
-    <meta name="referrer" content="no-referrer-when-downgrade" />
-    <meta
-      property="og:title"
-      content="Станьте частью команды Яндекс.Практикума"
-    />
-    <meta
-      property="og:description"
-      content="Яндекс.Практикум — сервис для подготовки интернет-специалистов. Мы помогаем тем,
+<head>
+  <meta charset="UTF-8">
+  <title>Открытые предложения в сопровождении Яндекс Практикума</title>
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta property="og:title" content="Станьте частью команды Яндекс.Практикума">
+  <meta property="og:description" content="Яндекс.Практикум — сервис для подготовки интернет-специалистов. Мы помогаем тем,
         кто решил изменить свою жизнь и найти призвание в IT. Над сервисом работают десятки специалистов из разных областей,
-        наша команда постоянно растёт. Вы можете присоединиться к ней, если вам близки наши цели."
-    />
-    <meta property="og:url" content="https://praktikum.yandex.ru/job/index" />
-    <meta property="og:url" content="/index" />
-    <meta
-      property="og:site_name"
-      content="Станьте частью команды Яндекс.Практикума"
-    />
-    <meta
-      property="og:image"
-      content="https://avatars.mds.yandex.net/get-lpc/1220100/3c62c4d5-7a0b-4fa6-9ff2-a484d4afafee/orig"
-    />
-    <meta property="og:locale" content="ru" />
-    <meta
-      name="description"
-      content="Станьте частью команды экспертов Яндекс Практикума"
-    />
-    <meta
-      name="keywords"
-      content="вакансии, ревьюер, наставник, практикум, яндекс"
-    />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:type" content="website" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="preconnect" href="https://an.yandex.ru/" />
-    <link rel="preconnect" href="https://yastatic.net/" />
-    <link rel="preconnect" href="https://avatars.mds.yandex.net/" />
-    <link rel="preconnect" href="https://mc.yandex.ru/" />
-    <link rel="preconnect" href="https://mc.admetrica.ru/" />
-    <link type="image/x-icon" rel="shortcut icon"
-    href=<%=require('../uploads/favicons/favicon.ico')%> >
-    <link
-      type="image/png"
-      sizes="16x16"
-      rel="icon"
-      href="<%=require('../uploads/favicons/favicon-16x16.png')%>"
-    />
-    <link
-      type="image/png"
-      sizes="32x32"
-      rel="icon"
-      href="<%=require('../uploads/favicons/favicon-32x32.png')%>"
-    />
-    <link
-      type="image/png"
-      sizes="96x96"
-      rel="icon"
-      href="<%=require('../uploads/favicons/favicon-96x96.png')%>"
-    />
-    <link
-      type="image/png"
-      sizes="120x120"
-      rel="icon"
-      href="<%=require('../uploads/favicons/favicon-120x120.png')%>"
-    />
-  </head>
+        наша команда постоянно растёт. Вы можете присоединиться к ней, если вам близки наши цели.">
+  <meta property="og:url" content="https://praktikum.yandex.ru/job/index">
+  <meta property="og:url" content="/index">
+  <meta property="og:site_name" content="Станьте частью команды Яндекс.Практикума">
+  <meta property="og:image"
+        content="https://avatars.mds.yandex.net/get-lpc/1220100/3c62c4d5-7a0b-4fa6-9ff2-a484d4afafee/orig">
+  <meta property="og:locale" content="ru">
+  <meta name="description" content="Станьте частью команды экспертов Яндекс Практикума">
+  <meta name="keywords" content="вакансии, ревьюер, наставник, практикум, яндекс">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:type" content="website">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://an.yandex.ru/">
+  <link rel="preconnect" href="https://yastatic.net/">
+  <link rel="preconnect" href="https://avatars.mds.yandex.net/">
+  <link rel="preconnect" href="https://mc.yandex.ru/">
+  <link rel="preconnect" href="https://mc.admetrica.ru/">
+  <link type="image/x-icon" rel="shortcut icon" href=<%=require('../uploads/favicons/favicon.ico')%>
+  >
+  <link type="image/png" sizes="16x16" rel="icon" href="<%=require('../uploads/favicons/favicon-16x16.png')%>">
+  <link type="image/png" sizes="32x32" rel="icon" href="<%=require('../uploads/favicons/favicon-32x32.png')%>">
+  <link type="image/png" sizes="96x96" rel="icon" href="<%=require('../uploads/favicons/favicon-96x96.png')%>">
+  <link type="image/png" sizes="120x120" rel="icon" href="<%=require('../uploads/favicons/favicon-120x120.png')%>">
+</head>
 
-  <body class="root">
-    <!-- Header -->
-    <header class="header inner-wrapper">
-      <picture>
-        <source
-          srcset="<%=require('../uploads/images/ya-logo-mobile.png')%>"
-          media="(max-width: 576px)"
-        />
-        <img
-          class="main-logo"
-          src="<%=require('../uploads/images/ru-logo-short.svg')%>"
-          alt="Основной логотип"
-        />
-      </picture>
-      <a href="#" class="header__btn small-btn">Откликнуться</a>
-      <div class="burger"></div>
-      <nav class="header__menu">
-        <ul class="header__menu-list">
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Что делает наставник</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Что делает ревьвер</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Открытые предложения</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">FAQ</a>
-          </li>
-          <li class="header__menu-item">
-            <a href="#" class="header__menu-link">Отклик на вакансию</a>
-          </li>
-        </ul>
-        <button type="button" class="header__menu-close-btn"></button>
-      </nav>
-    </header>
+<body class="root">
+<!-- Header -->
+<header class="header inner-wrapper">
+  <picture>
+    <source srcset="<%=require('../uploads/images/ya-logo-mobile.png')%>" media="(max-width: 576px)"/>
+    <img class="main-logo" src="<%=require('../uploads/images/ru-logo-short.svg')%>" alt="Основной логотип">
+  </picture>
+  <a href="#" class="header__btn small-btn">Откликнуться</a>
+  <div class="burger"></div>
+  <nav class="header__menu">
+    <ul class="header__menu-list">
+      <li class="header__menu-item"><a href="#" class="header__menu-link">Что делает наставник</a></li>
+      <li class="header__menu-item"><a href="#" class="header__menu-link">Что делает ревьвер</a></li>
+      <li class="header__menu-item"><a href="#" class="header__menu-link">Открытые предложения</a></li>
+      <li class="header__menu-item"><a href="#" class="header__menu-link">FAQ</a></li>
+      <li class="header__menu-item"><a href="#" class="header__menu-link">Отклик на вакансию</a></li>
+    </ul>
+    <button type="button" class="header__menu-close-btn"></button>
+  </nav>
+</header>
 
-    <main class="content">
-      <!-- Promotion section -->
-      <section class="promotion inner-wrapper content__item">
-        <h1 class="promotion__title promotion__text">
-          Станьте наставником или&#160;ревьюером
-        </h1>
-        <p class="promotion__description promotion__text">
-          Делись своим опытом в программировании, анализе данных, менеджменте,
-          маркетинге или дизайне и получай дополнительный доход
-        </p>
-        <div class="promotion__content">
-          <a href="#" class="btn btn_theme_light promotion__content-btn"
-            >Хочу делиться знаниями</a
-          >
-          <figure class="quote-blurry promotion__quote">
-            <blockquote class="quote-blurry__text">
-              <p class="quote-blurry__paragraph">
-                Ты состоявшийся специалист и хочешь делиться знаниями? Ты освоил
-                профессию самостоятельно и готов вдохновлять других своим
-                опытом?
-              </p>
-            </blockquote>
-          </figure>
-        </div>
-      </section>
+<main class="content">
 
-      <!-- Job highlights section -->
-      <section class="job-highlights inner-wrapper content__item">
-        <h2 class="job-highlights__title">
-          Присоединяйся к
-          <span
-            class="job-highlights__title job-highlights__title_accent_orange"
-            >команде экспертов</span
-          >
-          Я.Практикума
-        </h2>
-        <p class="job-highlights__subtitle">
-          Работа в Я.Практикуме - отличная возможность прокачать soft и hard
-          скиллы, а также освежить знания кода (для разработчиков) и теории.
-        </p>
-        <ul class="job-highlights__list">
-          <li class="job-highlights__list-item">
-            <h3 class="job-highlights__list-item-title">2 направления</h3>
-            <p class="job-highlights__list-item-text">
-              Вы сможете стать старшим наставником или сеньор-ревьювером
-            </p>
-          </li>
-          <li class="job-highlights__list-item">
-            <h3 class="job-highlights__list-item-title">Личный бренд</h3>
-            <p class="job-highlights__list-item-text">
-              Публикуйтесь в нашем блоге и выступайте на встречах, чтобы о вас
-              узнали как об эксперте
-            </p>
-          </li>
-          <li class="job-highlights__list-item">
-            <h3 class="job-highlights__list-item-title">Учение – свет</h3>
-            <p class="job-highlights__list-item-text">
-              Бесплатно на том курсе, где вы помогаете студентам,
-              и со&nbsp;скидкой на остальных
-            </p>
-          </li>
-          <li class="job-highlights__list-item">
-            <h3 class="job-highlights__list-item-title">
-              Группы до&nbsp;50&nbsp;человек
-            </h3>
-            <p class="job-highlights__list-item-text">
-              Максимальный размер группы, всем комфортно и хватает времени
-            </p>
-          </li>
-          <li class="job-highlights__list-item">
-            <h3 class="job-highlights__list-item-title">
-              Занятость 2-3&nbsp;часа в&nbsp;день
-            </h3>
-            <p class="job-highlights__list-item-text">
-              Отличное дополнение к основной работе, сами выбираете в какое
-              время вы свободны
-            </p>
-          </li>
-          <li class="job-highlights__list-item">
-            <h3 class="job-highlights__list-item-title">
-              Доход 35-55&nbsp;тысяч рублей в месяц
-            </h3>
-            <p class="job-highlights__list-item-text">
-              И это за пару часов в день, и ты ещё думаешь, скорее оставляй
-              заявку
-            </p>
-          </li>
-        </ul>
-        <a href="#" class="job-highlights__btn btn btn_theme_dark"
-          >Хочу расти профессионально</a
-        >
-      </section>
+  <!-- Promotion section -->
+  <section class="promotion inner-wrapper content__item">
+    <h1 class="promotion__title promotion__text">Станьте наставником или&#160;ревьюером</h1>
+    <p class="promotion__description promotion__text">Делись своим опытом в программировании, анализе данных,
+      менеджменте, маркетинге или дизайне и получай дополнительный доход</p>
+    <div class="promotion__content">
+      <a href="#" class="btn btn_theme_light promotion__content-btn">Хочу делиться знаниями</a>
+      <figure class="quote-blurry promotion__quote">
+        <blockquote class="quote-blurry__text">
+          <p class="quote-blurry__paragraph">Ты состоявшийся специалист и хочешь делиться знаниями?
+            Ты освоил профессию самостоятельно и готов вдохновлять других своим опытом? </p>
+        </blockquote>
+      </figure>
+    </div>
+  </section>
 
-      <!-- Roles section -->
-      <section class="roles inner-wrapper content__item">
-        <ul class="roles__list">
-          <li class="roles__item roles__item_left">
-            <div class="roles__main">
-              <div class="roles__info">
-                <h2 class="roles__title roles__text">
-                  <span class="roles__title-role roles__title_accent_aquamarine"
-                    >Наставник —
-                  </span>
-                  я&nbsp;к&nbsp;этому&nbsp;готов
-                </h2>
-                <ul class="roles__description roles__text roles__text-list">
-                  <li class="roles__text-list-item">
-                    Помогать студентам ставить цели, рефлексировать и делать
-                    выводы
-                  </li>
-                  <li class="roles__text-list-item">
-                    Отвечать на их вопросы в чате
-                  </li>
-                  <li class="roles__text-list-item">
-                    Проводить вебинары 2 раза в месяц и давать обратную связь
-                  </li>
-                  <li class="roles__text-list-item">
-                    Делиться опытом и мотивировать
-                  </li>
-                </ul>
-              </div>
-              <div class="roles__image role__image_mentor"></div>
-              <button class="btn btn_theme_dark roles__open-btn" type="button">
-                Подробнее
-              </button>
-              <button
-                class="btn btn_theme_light roles__close-btn roles_visually-hidden"
-                type="button"
-                aria-label="Закрыть"
-              />
-            </div>
-            <div class="roles__details roles__details_left">
-              <div class="roles__details-content">
-                <div class="roles__details-content-text">
-                  <p
-                    class="roles__description roles__text roles__details-text roles__details-text_accented"
-                  >
-                    Наставник помогает студентам учиться: отвечает на вопросы
-                    и помогает с трудностями. Каждый наставник курирует группу
-                    из 50 студентов: общается с ними в «Пачке», проводит
-                    групповые звонки на протяжении 4 месяцев обучения
-                    и постоянно улучшает образовательный опыт.
-                  </p>
-                  <p
-                    class="roles__text roles__details-text roles__details-text_subtitle"
-                  >
-                    Я хочу стать наставником. Меня возьмут?
-                  </p>
-                  <p class="roles__description roles__text roles__details-text">
-                    Скорее всего — да, если вы:
-                  </p>
-                  <ul class="roles__text-list roles__text roles__details-text">
-                    <li>имеете опыт работы больше трех лет;</li>
-                    <li>знаете HTML, CSS;</li>
-                    <li>работали с JavaScript, React, TypeScript, Node.js;</li>
-                    готовы посвящать проекту от 8 до 12 часов в неделю.
-                  </ul>
-                  <p class="roles__description roles__text roles__details-text">
-                    Удобное для вас время будем рады обсудить лично.
-                  </p>
-                  <p
-                    class="roles__text roles__details-text roles__details-text_subtitle"
-                  >
-                    Что мы предлагаем?
-                  </p>
-                  <ul class="roles__text-list roles__text roles__details-text">
-                    <li>Удалённое сотрудничество;</li>
-                    <li>
-                      возможность совмещать участие в проекте с основной
-                      работой;
-                    </li>
-                    <li>обмен опытом с разработчиками в нашем сообществе;</li>
-                    <li>обучение в Школе наставников Яндекс.Практикума.</li>
-                  </ul>
-                </div>
-                <a href="#" class="btn btn_theme_dark"
-                  >Хочу стать наставником</a
-                >
-              </div>
-            </div>
-          </li>
-          <li class="roles__item roles__item_right">
-            <div class="roles__details roles__details_right">
-              <div class="roles__details-content">
-                <div class="roles__details-content-text">
-                  <p
-                    class="roles__description roles__text roles__details-text roles__details-text_accented"
-                  >
-                    Наставник помогает студентам учиться: отвечает на вопросы
-                    и помогает с трудностями. Каждый наставник курирует группу
-                    из 50 студентов: общается с ними в «Пачке», проводит
-                    групповые звонки на протяжении 4 месяцев обучения
-                    и постоянно улучшает образовательный опыт.
-                  </p>
-                  <p
-                    class="roles__text roles__details-text roles__details-text_subtitle"
-                  >
-                    Я хочу стать наставником. Меня возьмут?
-                  </p>
-                  <p class="roles__description roles__text roles__details-text">
-                    Скорее всего — да, если вы:
-                  </p>
-                  <ul class="roles__text-list roles__text roles__details-text">
-                    <li>имеете опыт работы больше трех лет;</li>
-                    <li>знаете HTML, CSS;</li>
-                    <li>работали с JavaScript, React, TypeScript, Node.js;</li>
-                    готовы посвящать проекту от 8 до 12 часов в неделю.
-                  </ul>
-                  <p class="roles__description roles__text roles__details-text">
-                    Удобное для вас время будем рады обсудить лично.
-                  </p>
-                  <p
-                    class="roles__text roles__details-text roles__details-text_subtitle"
-                  >
-                    Что мы предлагаем?
-                  </p>
-                  <ul class="roles__text-list roles__text roles__details-text">
-                    <li>Удалённое сотрудничество;</li>
-                    <li>
-                      возможность совмещать участие в проекте с основной
-                      работой;
-                    </li>
-                    <li>обмен опытом с разработчиками в нашем сообществе;</li>
-                    <li>обучение в Школе наставников Яндекс.Практикума.</li>
-                  </ul>
-                </div>
-                <a href="#" class="btn btn_theme_dark">Хочу стать ревьюером</a>
-              </div>
-            </div>
-            <div class="roles__main roles__main_right">
-              <div class="roles__info">
-                <h2 class="roles__title roles__text">
-                  <span class="roles__title-role roles__title_accent_yellow"
-                    >Ревьюер —
-                  </span>
-                  кажется, это&nbsp;для&nbsp;меня
-                </h2>
-                <ul class="roles__description roles__text roles__text-list">
-                  <li class="roles__text-list-item">
-                    Проверять код и проекты студентов
-                  </li>
-                  <li class="roles__text-list-item">
-                    Простыми словами объяснять им их ошибки
-                  </li>
-                  <li class="roles__text-list-item">
-                    Давать корректирующую обратную связь
-                  </li>
-                  <li class="roles__text-list-item">
-                    Оценивать работы - зачёт/незачёт
-                  </li>
-                </ul>
-              </div>
-              <div class="roles__image role__image_reviewer"></div>
-              <button class="btn btn_theme_dark roles__open-btn" type="button">
-                Подробнее
-              </button>
-              <button
-                class="btn btn_theme_light roles__close-btn roles_visually-hidden"
-                type="button"
-                aria-label="Закрыть"
-              />
-            </div>
-          </li>
-        </ul>
-      </section>
+  <!-- Job highlights section -->
+  <section class="job-highlights inner-wrapper content__item">
+    <h2 class="job-highlights__title">Присоединяйся к
+      <span class="job-highlights__title job-highlights__title_accent_orange">команде экспертов</span>
+      Я.Практикума</h2>
+    <p class="job-highlights__subtitle">Работа в Я.Практикуме - отличная возможность прокачать
+      soft и hard скиллы, а также освежить знания кода (для разработчиков) и теории.
+    </p>
+    <ul class="job-highlights__list">
+      <li class="job-highlights__list-item">
+        <h3 class="job-highlights__list-item-title">2 направления</h3>
+        <p class="job-highlights__list-item-text">Вы сможете стать старшим наставником или сеньор-ревьювером</p>
+      </li>
+      <li class="job-highlights__list-item">
+        <h3 class="job-highlights__list-item-title">Личный бренд</h3>
+        <p class="job-highlights__list-item-text">Публикуйтесь в нашем блоге и выступайте на встречах, чтобы
+          о вас узнали как об эксперте</p>
+      </li>
+      <li class="job-highlights__list-item">
+        <h3 class="job-highlights__list-item-title">Учение – свет</h3>
+        <p class="job-highlights__list-item-text">Бесплатно на том курсе,
+          где вы помогаете студентам,
+          и со&nbsp;скидкой на остальных</p>
+      </li>
+      <li class="job-highlights__list-item">
+        <h3 class="job-highlights__list-item-title">Группы до&nbsp;50&nbsp;человек </h3>
+        <p class="job-highlights__list-item-text">Максимальный размер группы, всем комфортно и хватает времени</p>
+      </li>
+      <li class="job-highlights__list-item">
+        <h3 class="job-highlights__list-item-title">Занятость
+          2-3&nbsp;часа в&nbsp;день</h3>
+        <p class="job-highlights__list-item-text">Отличное дополнение к основной работе, сами выбираете в какое время вы свободны</p>
+      </li>
+      <li class="job-highlights__list-item">
+        <h3 class="job-highlights__list-item-title">Доход 35-55&nbsp;тысяч рублей в месяц</h3>
+        <p class="job-highlights__list-item-text">И это за пару часов в день, и ты ещё думаешь, скорее оставляй заявку</p>
+      </li>
+    </ul>
+    <a href="#" class="job-highlights__btn btn btn_theme_dark">Хочу расти профессионально</a>
+  </section>
 
-      <!-- Quiz section -->
-      <section class="quiz inner-wrapper content__item">
-        <h2 class="quiz__header">Кто я, Наставник или Ревьюер?</h2>
-        <p class="quiz__description">
-          Все ещё сомневаешься, что тебе больше подходит? Мы понимаем, что выбор
-          сложный. И постараемся помочь. Ответь на пару вопросов, и мы направим
-          тебя в нужную сотрону. Прям как распределительная шляпа, хи-хи.
-        </p>
-        <div class="quiz__test">
-          <h3 class="quiz__question-title">Вопрос 1</h3>
-          <p class="quiz__question">
-            «У меня точно есть лидерские качества, я умею вдохновлять и вести
-            людей за собой» — сказали бы так про себя?
-          </p>
-          <fieldset class="quiz__options">
-            <label class="quiz__option" for="radioButtonQuiz">
-              <input
-                class="quiz__radio-button"
-                type="radio"
-                id="option-one"
-                name="quizOption"
-                value="mentor"
-              />
-              <span class="quiz__option-text">Конечно! Что есть, то есть.</span>
-            </label>
-            <label class="quiz__option" for="radioButtonQuiz">
-              <input
-                class="quiz__radio-button"
-                type="radio"
-                id="option-two"
-                name="quizOption"
-                value="reviewer"
-              />
-              <span class="quiz__option-text"
-                >Скорее нет, но хочу работать над этим.</span
-              >
-            </label>
-          </fieldset>
-          <div class="quiz__progress-bar">
-            <div class="quiz__progress-bar-item">
-              <div
-                class="quiz__progress-bar-line quiz__progress-bar-line_active"
-              ></div>
-            </div>
-            <div class="quiz__progress-bar-item">
-              <div class="quiz__progress-bar-line"></div>
-            </div>
-            <div class="quiz__progress-bar-item">
-              <div class="quiz__progress-bar-line"></div>
-            </div>
-            <div class="quiz__progress-bar-item">
-              <div class="quiz__progress-bar-line"></div>
-            </div>
-            <div class="quiz__progress-bar-item">
-              <div class="quiz__progress-bar-line"></div>
-            </div>
-            <div class="quiz__progress-bar-item">
-              <div class="quiz__progress-bar-line"></div>
-            </div>
-            <div class="quiz__progress-bar-item">
-              <div class="quiz__progress-bar-line"></div>
-            </div>
-            <div class="quiz__progress-bar-item">
-              <div class="quiz__progress-bar-line"></div>
-            </div>
-            <div class="quiz__progress-bar-item">
-              <div class="quiz__progress-bar-line"></div>
-            </div>
-          </div>
-        </div>
-        <div class="quiz__illustration"></div>
-      </section>
-
-      <template id="quiz-card"> </template>
-
-      <!--Offers section-->
-      <section class="offers inner-wrapper content__item">
-        <div class="tabs">
-          <div class="tabs__header">
-            <h2 class="tabs__title">Открытые предложения</h2>
-            <nav class="tabs__navigation">
-              <ul class="tabs__navigation-list">
-                <li class="tabs__navigation-item">
-                  <button
-                    type="button"
-                    class="tabs__btn tabs__btn-checkbox"
-                    data-check="mentor"
-                  >
-                    Наставник
-                  </button>
-                </li>
-                <li class="tabs__navigation-item">
-                  <button
-                    type="button"
-                    class="tabs__btn tabs__btn-checkbox"
-                    data-check="reviewer"
-                  >
-                    Ревьювер
-                  </button>
-                </li>
-                <li class="tabs__navigation-item">
-                  <button
-                    type="button"
-                    class="tabs__btn tabs__btn-checkbox"
-                    data-check="programming"
-                  >
-                    Программирование
-                  </button>
-                </li>
-                <li class="tabs__navigation-item">
-                  <button
-                    type="button"
-                    class="tabs__btn tabs__btn-checkbox"
-                    data-check="design"
-                  >
-                    Дизайн
-                  </button>
-                </li>
-                <li class="tabs__navigation-item">
-                  <button
-                    type="button"
-                    class="tabs__btn tabs__btn-checkbox"
-                    data-check="marketing"
-                  >
-                    Маркетинг
-                  </button>
-                </li>
-                <li class="tabs__navigation-item">
-                  <button
-                    type="button"
-                    class="tabs__btn tabs__btn-checkbox"
-                    data-check="management"
-                  >
-                    Менеджмент
-                  </button>
-                </li>
-              </ul>
-              <ul class="tabs__navigation-list">
-                <li class="tabs__navigation-item">
-                  <button
-                    type="button"
-                    class="tabs__btn tabs__btn-radio"
-                    data-check="35000"
-                  >
-                    от 35 000
-                  </button>
-                </li>
-                <li class="tabs__navigation-item">
-                  <button
-                    type="button"
-                    class="tabs__btn tabs__btn-radio"
-                    data-check="40000"
-                  >
-                    от 40 000
-                  </button>
-                </li>
-                <li class="tabs__navigation-item">
-                  <button
-                    type="button"
-                    class="tabs__btn tabs__btn-radio"
-                    data-check="45000"
-                  >
-                    от 45 000
-                  </button>
-                </li>
-                <li class="tabs__navigation-item">
-                  <button
-                    type="button"
-                    class="tabs__btn tabs__btn-radio"
-                    data-check="50000"
-                  >
-                    от 50 000
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div class="tabs__content">
-            <ul class="tabs__content-list">
-              <li class="tabs__content-item tabs__content-item_button">
-                <button
-                  type="button"
-                  class="content-item__btn content-item__btn_direction_back"
-                >
-                  <span class="content-item__btn-text">Назад</span>
-                </button>
+  <!-- Roles section -->
+  <section class="roles inner-wrapper content__item">
+    <ul class="roles__list">
+      <li class="roles__item roles__item_left">
+        <div class="roles__main">
+          <div class="roles__info">
+            <h2 class="roles__title roles__text">
+              <span class="roles__title-role roles__title_accent_aquamarine"
+              >Наставник —
+              </span>
+              я&nbsp;к&nbsp;этому&nbsp;готов
+            </h2>
+            <ul class="roles__description roles__text roles__text-list">
+              <li class="roles__text-list-item">Помогать студентам ставить цели,
+                рефлексировать и делать выводы
               </li>
-              <li class="tabs__content-item tabs__content-item_button">
-                <button
-                  type="button"
-                  class="content-item__btn content-item__btn_direction_next"
-                >
-                  <span class="content-item__btn-text">Далее</span>
-                </button>
-              </li>
+              <li class="roles__text-list-item">Отвечать на их вопросы в чате</li>
+              <li class="roles__text-list-item">Проводить вебинары 2 раза в месяц и давать обратную связь</li>
+              <li class="roles__text-list-item">Делиться опытом и мотивировать</li>
             </ul>
-            <nav class="tabs__pagination">
-              <ul class="tabs__pagination-list">
-                <li class="tabs__pagination-item">1</li>
-                <li class="tabs__pagination-item tabs__pagination-item_active">
-                  2
-                </li>
-                <li class="tabs__pagination-item">3</li>
-                <li class="tabs__pagination-item">4</li>
+          </div>
+          <div class="roles__image role__image_mentor"></div>
+          <button class="btn btn_theme_dark roles__open-btn" type="button">Подробнее</button>
+          <button class="btn btn_theme_light roles__close-btn roles_visually-hidden" type="button"
+                  aria-label="Закрыть" />
+        </div>
+        <div class="roles__details roles__details_left">
+          <div class="roles__details-content">
+            <div class="roles__details-content-text">
+              <p class="roles__description roles__text roles__details-text roles__details-text_accented">Наставник
+                помогает студентам учиться: отвечает
+                на вопросы и помогает с трудностями. Каждый наставник курирует группу из 50 студентов: общается с ними
+                в «Пачке»,
+                проводит групповые звонки на протяжении 4 месяцев обучения и постоянно улучшает образовательный
+                опыт.</p>
+              <p class="roles__text roles__details-text roles__details-text_subtitle">Я хочу стать наставником. Меня
+                возьмут?</p>
+              <p class="roles__description roles__text roles__details-text">
+                Скорее всего — да, если вы:
+              </p>
+              <ul class="roles__text-list roles__text roles__details-text">
+                <li>имеете опыт работы больше трех лет;</li>
+                <li>знаете HTML, CSS;</li>
+                <li>работали с JavaScript, React, TypeScript, Node.js;</li>
+                готовы посвящать проекту от 8 до 12 часов в неделю.
               </ul>
-            </nav>
+              <p class="roles__description roles__text roles__details-text">Удобное для вас время будем рады обсудить
+                лично.</p>
+              <p class="roles__text roles__details-text roles__details-text_subtitle">Что мы предлагаем?</p>
+              <ul class="roles__text-list roles__text roles__details-text">
+                <li>Удалённое сотрудничество;</li>
+                <li>возможность совмещать участие в проекте с основной работой;</li>
+                <li>обмен опытом с разработчиками в нашем сообществе;</li>
+                <li>обучение в Школе наставников Яндекс.Практикума.</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn_theme_dark">Хочу стать наставником</a>
           </div>
         </div>
-      </section>
+      </li>
+      <li class="roles__item roles__item_right">
+        <div class="roles__details roles__details_right">
+          <div class="roles__details-content">
+            <div class="roles__details-content-text">
+              <p class="roles__description roles__text roles__details-text roles__details-text_accented">Наставник
+                помогает студентам учиться: отвечает
+                на вопросы и помогает с трудностями. Каждый наставник курирует группу из 50 студентов: общается с ними
+                в «Пачке»,
+                проводит групповые звонки на протяжении 4 месяцев обучения и постоянно улучшает образовательный
+                опыт.</p>
+              <p class="roles__text roles__details-text roles__details-text_subtitle">Я хочу стать наставником. Меня
+                возьмут?</p>
+              <p class="roles__description roles__text roles__details-text">
+                Скорее всего — да, если вы:
+              </p>
+              <ul class="roles__text-list roles__text roles__details-text">
+                <li>имеете опыт работы больше трех лет;</li>
+                <li>знаете HTML, CSS;</li>
+                <li>работали с JavaScript, React, TypeScript, Node.js;</li>
+                готовы посвящать проекту от 8 до 12 часов в неделю.
+              </ul>
+              <p class="roles__description roles__text roles__details-text">Удобное для вас время будем рады обсудить
+                лично.</p>
+              <p class="roles__text roles__details-text roles__details-text_subtitle">Что мы предлагаем?</p>
+              <ul class="roles__text-list roles__text roles__details-text">
+                <li>Удалённое сотрудничество;</li>
+                <li>возможность совмещать участие в проекте с основной работой;</li>
+                <li>обмен опытом с разработчиками в нашем сообществе;</li>
+                <li>обучение в Школе наставников Яндекс.Практикума.</li>
+              </ul>
+            </div>
+            <a href="#" class="btn btn_theme_dark">Хочу стать ревьюером</a>
+          </div>
+        </div>
+        <div class="roles__main roles__main_right">
+          <div class="roles__info">
+            <h2 class="roles__title roles__text">
+              <span class="roles__title-role roles__title_accent_yellow"
+              >Ревьюер —
+              </span>
+              кажется, это&nbsp;для&nbsp;меня
+            </h2>
+            <ul class="roles__description roles__text roles__text-list">
+              <li class="roles__text-list-item">Проверять код и проекты студентов</li>
+              <li class="roles__text-list-item">Простыми словами объяснять им их ошибки</li>
+              <li class="roles__text-list-item">Давать корректирующую обратную связь</li>
+              <li class="roles__text-list-item">Оценивать работы - зачёт/незачёт</li>
+            </ul>
+          </div>
+          <div class="roles__image role__image_reviewer"></div>
+          <button class="btn btn_theme_dark roles__open-btn" type="button">Подробнее</button>
+          <button class="btn btn_theme_light roles__close-btn roles_visually-hidden" type="button"
+                  aria-label="Закрыть" />
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Quiz section -->
+  <section class="quiz inner-wrapper content__item">
+    <h2 class="quiz__header">Кто я, Наставник или Ревьюер?</h2>
+    <p class="quiz__description">Все ещё сомневаешься, что тебе больше подходит? Мы понимаем, что выбор сложный.
+      И постараемся помочь. Ответь на пару вопросов, и мы направим тебя в нужную сотрону.
+      Прям как распределительная шляпа, хи-хи.
+    </p>
+    <div class="quiz__test">
+      <h3 class="quiz__question-title">Вопрос 1</h3>
+      <p class="quiz__question">«У меня точно есть лидерские качества, я умею вдохновлять
+        и вести людей за собой» — сказали бы так про себя?</p>
+      <fieldset class="quiz__options">
+        <label class="quiz__option" for="radioButtonQuiz">
+          <input class="quiz__radio-button" type="radio" id="radioButtonQuiz" name="quizOption" value="mentor">
+          <span class="quiz__option-text">Конечно! Что есть, то есть.</span>
+        </label>
+        <label class="quiz__option" for="radioButtonQuiz">
+          <input class="quiz__radio-button" type="radio" id="radioButtonQuiz" name="quizOption" value="reviewer">
+          <span class="quiz__option-text">Скорее нет, но хочу работать над этим.</span>
+        </label>
+      </fieldset>
+      <div class="quiz__progress-bar">
+        <div class="quiz__progress-bar-item">
+          <div class="quiz__progress-bar-line quiz__progress-bar-line_active"></div>
+        </div>
+        <div class="quiz__progress-bar-item">
+          <div class="quiz__progress-bar-line"></div>
+        </div>
+        <div class="quiz__progress-bar-item">
+          <div class="quiz__progress-bar-line"></div>
+        </div>
+        <div class="quiz__progress-bar-item">
+          <div class="quiz__progress-bar-line"></div>
+        </div>
+        <div class="quiz__progress-bar-item">
+          <div class="quiz__progress-bar-line"></div>
+        </div>
+        <div class="quiz__progress-bar-item">
+          <div class="quiz__progress-bar-line"></div>
+        </div>
+        <div class="quiz__progress-bar-item">
+          <div class="quiz__progress-bar-line"></div>
+        </div>
+        <div class="quiz__progress-bar-item">
+          <div class="quiz__progress-bar-line"></div>
+        </div>
+        <div class="quiz__progress-bar-item">
+          <div class="quiz__progress-bar-line"></div>
+        </div>
+      </div>
+    </div>
+    <div class="quiz__illustration"></div>
+  </section>
+
+  <template id="quiz-card">
+
+  </template>
+
+  <!--Offers section-->
+  <section class="offers inner-wrapper content__item">
+    <div class="tabs">
+      <div class="tabs__header">
+        <div class="tabs__text-content">
+          <h2 class="tabs__title">Открытые предложения</h2>
+          <p class="tabs__description">Подробная информация по сотруднечеству обсуждается индивидуально с каждым кандидатом, оставившим заявку</p>
+          <button class="tabs__btn-reset">Сбросить фильтры</button>
+        </div>
+        <nav class="tabs__navigation">
+          <ul class="tabs__navigation-list">
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn-checkbox" data-check="mentor">Наставник</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn-checkbox" data-check="reviewer">Ревьювер</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn-checkbox" data-check="programming">Программирование
+              </button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn-checkbox" data-check="design">Дизайн</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn-checkbox" data-check="marketing">Маркетинг</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn-checkbox" data-check="management">Менеджмент</button>
+            </li>
+          </ul>
+          <ul class="tabs__navigation-list">
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn-radio" data-check="35000">от 35 000</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn-radio" data-check="40000">от 40 000</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn-radio" data-check="45000">от 45 000</button>
+            </li>
+            <li class="tabs__navigation-item">
+              <button type="button" class="tabs__btn tabs__btn-radio" data-check="50000">от 50 000</button>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="tabs__content">
+        <ul class="tabs__content-list">
+          <li class="tabs__content-item tabs__content-item_button">
+            <button type="button" class="content-item__btn content-item__btn_direction_back"><span
+                class="content-item__btn-text">Назад</span></button>
+          </li>
+          <li class="tabs__content-item tabs__content-item_button">
+            <button type="button" class="content-item__btn content-item__btn_direction_next"><span
+                class="content-item__btn-text">Далее</span></button>
+          </li>
+        </ul>
+        <nav class="tabs__pagination">
+          <ul class="tabs__pagination-list">
+            <li class="tabs__pagination-item">1</li>
+            <li class="tabs__pagination-item tabs__pagination-item_active">2</li>
+            <li class="tabs__pagination-item">3</li>
+            <li class="tabs__pagination-item">4</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </section>
 
       <!--Video history section-->
       <section class="video-history inner-wrapper content__item">
