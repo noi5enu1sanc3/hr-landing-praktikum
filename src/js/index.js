@@ -3,17 +3,23 @@ import { Offer } from './components/Offer';
 import { List } from './components/List';
 import { Accordion } from './components/Accordion';
 import RoleCard from './components/RoleCard';
-import offersData from "./utils/offersData.json";
+import offersData from './utils/offersData.json';
+
+import {
+  filterByPost,
+  filterByDirection,
+  filterBySalary,
+} from './utils/filterHelper';
 
 import {
   ROLE_CARD_SELECTOR_CONFIG,
   ROLE_CARD_CLASS_CONFIG,
   BUTTON_TABS_CONFIG,
   OFFERS_ITEM_SELECTOR_CONFIG,
-  ACCORDION_SELECTOR_CONFIG, BURGER_NAME_CONFIG,
+  ACCORDION_SELECTOR_CONFIG,
+  BURGER_NAME_CONFIG,
 } from './utils/constants';
 import { Burger } from './components/Burger';
-
 
 const roleCardLeft = new RoleCard(
   ROLE_CARD_SELECTOR_CONFIG.leftCardSelector,
@@ -47,31 +53,43 @@ const roleCardRight = new RoleCard(
 );
 roleCardRight.setEventListeners();
 
-
 // Создание офера
-const createOffer = (data) => {
+const createOffer = data => {
   const offer = new Offer(data, OFFERS_ITEM_SELECTOR_CONFIG);
   return offer.generateOffer();
-}
+};
 
-const offersList = new List({
-  renderer: (item) => {
-    const offer = createOffer(item);
-    offersList.addItem(offer);
+const offersList = new List(
+  {
+    renderer: item => {
+      const offer = createOffer(item);
+      offersList.addItem(offer);
+    },
+  },
+  OFFERS_ITEM_SELECTOR_CONFIG
+);
+
+const filterOffers = new FilterOffers(
+  offersData,
+  BUTTON_TABS_CONFIG,
+  {
+    rendererData: data => {
+      offersList.clearList();
+      offersList.render(data);
+    },
+  },
+  {
+    filterUtils: {
+      filterByPost: filterByPost,
+      filterByDirection: filterByDirection,
+      filterBySalary: filterBySalary,
+    },
   }
-}, OFFERS_ITEM_SELECTOR_CONFIG);
-
-
-const filterOffers = new FilterOffers(offersData, BUTTON_TABS_CONFIG, {
-  rendererData: (data) => {
-    offersList.clearList();
-    offersList.render(data);
-  }
-});
+);
 
 filterOffers.setEventListeners();
 
-filterOffers.renderData(offersData)
+filterOffers.renderData(offersData);
 
 const accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
