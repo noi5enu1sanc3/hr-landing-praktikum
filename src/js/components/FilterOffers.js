@@ -1,17 +1,39 @@
 export default class FilterOffers {
-  constructor(data, buttonSelectors, { rendererData }) {
+  constructor(data, buttonsConfig, { rendererData }, { filterUtils }) {
     this._data = data;
     this._rendererData = rendererData;
 
     this._buttonCheckboxElements = [
-      ...document.querySelectorAll(buttonSelectors.buttonCheckboxSelector),
+      ...document.querySelectorAll(buttonsConfig.buttonCheckboxSelector),
     ];
     this._buttonRadioElements = [
-      ...document.querySelectorAll(buttonSelectors.buttonRadioSelector),
+      ...document.querySelectorAll(buttonsConfig.buttonRadioSelector),
     ];
+
+    this._buttonResetElement = document.querySelector(
+      buttonsConfig.buttonResetSelector
+    );
+
+    this._activeButtonClass = buttonsConfig.activeButtonClass;
+
+    this._shouldFilterByPost = filterUtils.filterByPost;
+    this._shouldFilterByDirection = filterUtils.filterByDirection;
+    this._shouldFilterBySalary = filterUtils.filterBySalary;
 
     this._filteringBy = new Set(); //набор уникальных значений, по которым производится фильтрация: должность, направление, вознаграждение
     this._activeFilters = []; //массив условий, по которым производится фильтрация
+  }
+
+  _resetFilters() {
+    this._filteringBy.clear();
+    this._activeFilters = [];
+    this._buttonCheckboxElements.forEach(element =>
+      element.classList.remove(this._activeButtonClass)
+    );
+    this._buttonRadioElements.forEach(element =>
+      element.classList.remove(this._activeButtonClass)
+    );
+    this.renderData(this._getFilterData());
   }
 
   renderData(data = this._data) {
@@ -20,29 +42,15 @@ export default class FilterOffers {
 
   _updateFilterConditionsSet() {
     //метод, обновляющий сет this._filteringBy
-    if (
-      this._activeFilters.some(
-        filter => filter === 'mentor' || filter === 'reviewer'
-      )
-    ) {
-      this._filteringBy.add('post');
-    } else {
-      this._filteringBy.delete('post');
-    }
-    if (
-      this._activeFilters.some(
-        filter =>
-          this._activeFilters.length !== 0 &&
-          filter !== 'mentor' &&
-          filter !== 'reviewer' &&
-          typeof filter !== 'number'
-      )
-    ) {
-      this._filteringBy.add('direction');
-    } else {
-      this._filteringBy.delete('direction');
-    }
-    this._activeFilters.some(filter => typeof filter === 'number')
+    this._shouldFilterByPost(this._activeFilters)
+      ? this._filteringBy.add('post')
+      : this._filteringBy.delete('post');
+
+    this._shouldFilterByDirection(this._activeFilters)
+      ? this._filteringBy.add('direction')
+      : this._filteringBy.delete('direction');
+
+    this._shouldFilterBySalary(this._activeFilters)
       ? this._filteringBy.add('salary')
       : this._filteringBy.delete('salary');
     console.log(this._filteringBy);
@@ -66,7 +74,7 @@ export default class FilterOffers {
   }
 
   _handleCheckboxFilter(event) {
-    event.target.classList.toggle('tabs__btn_active');
+    event.target.classList.toggle(this._activeButtonClass);
 
     if (this._isButtonActive(event.target)) {
       this._activeFilters.push(this._getAttribute(event.target));
@@ -79,7 +87,7 @@ export default class FilterOffers {
   }
 
   _isButtonActive(button) {
-    return button.classList.contains('tabs__btn_active');
+    return button.classList.contains(this._activeButtonClass);
   }
 
   _getAttribute(element) {
@@ -89,10 +97,10 @@ export default class FilterOffers {
   _handleRadioFilter(event) {
     this._buttonRadioElements.forEach(element => {
       if (element !== event.target) {
-        element.classList.remove('tabs__btn_active');
+        element.classList.remove(this._activeButtonClass);
       }
     });
-    event.target.classList.toggle('tabs__btn_active');
+    event.target.classList.toggle(this._activeButtonClass);
 
     if (
       this._isButtonActive(event.target) &&
@@ -127,5 +135,9 @@ export default class FilterOffers {
         this._handleRadioFilter(event)
       );
     });
+
+    this._buttonResetElement.addEventListener('click', () =>
+      this._resetFilters()
+    );
   }
 }

@@ -21,23 +21,25 @@ export const ROLE_CARD_CLASS_CONFIG = {
 
 export const BUTTON_TABS_CONFIG = {
   buttonCheckboxSelector: '.tabs__btn-checkbox',
-  buttonRadioSelector: '.tabs__btn-radio'
-}
+  buttonRadioSelector: '.tabs__btn-radio',
+  buttonResetSelector: '.tabs__btn-reset',
+  activeButtonClass: 'tabs__btn_active',
+};
 
 export const OFFERS_ITEM_SELECTOR_CONFIG = {
   listSelector: '.tabs__content-list',
-  itemTemplateSelector:'.tabs__content-item-template',
+  itemTemplateSelector: '.tabs__content-item-template',
   itemSelector: '.tabs__content-item',
   titleSelector: '.tabs__content-title',
   contentSelector: '.tabs__content-text',
-}
+};
 
 export const ACCORDION_SELECTOR_CONFIG = {
   accordionButton: '.accordion__header',
-}
+};
 
 export const BURGER_NAME_CONFIG = {
   burgerOpeningButtonName: 'burger',
   burgerClosingButtonName: 'header__menu-close-btn',
-  headerNavigationMenuName: 'header__menu'
-}
+  headerNavigationMenuName: 'header__menu',
+};
