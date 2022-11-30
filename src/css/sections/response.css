@@ -6,8 +6,6 @@
 @media screen and (max-width: 700px) {
   .response {
     padding: 24px 28px 32px;
-    margin: 0;
-    width: 100%;
   }
 }
 
@@ -59,7 +57,7 @@
   border: 2px solid #E0E0E0;
   margin-top: 8px;
   border-radius: 14px;
-  padding: 20px 16px;
+  padding: 0 16px;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -94,6 +92,11 @@
   border-radius: 14px;
   padding: 20px 16px;
   border: 2px solid #E0E0E0;
+  font-family: var(--ya-text-font);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--grey-text-color);
 }
 
 @media screen and (max-width: 800px) {
