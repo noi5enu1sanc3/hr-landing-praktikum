@@ -35,3 +35,9 @@ export const OFFERS_ITEM_SELECTOR_CONFIG = {
 export const ACCORDION_SELECTOR_CONFIG = {
   accordionButton: '.accordion__header',
 }
+
+export const BURGER_NAME_CONFIG = {
+  burgerOpeningButtonName: 'burger',
+  burgerClosingButtonName: 'header__menu-close-btn',
+  headerNavigationMenuName: 'header__menu'
+}

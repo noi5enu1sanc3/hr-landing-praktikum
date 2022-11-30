@@ -37,8 +37,22 @@
 <body class="root">
 <!-- Header -->
 <header class="header inner-wrapper">
-  <img class="main-logo" src="<%=require('../uploads/images/ru-logo-short.svg')%>" alt="Основной логотип">
-  <a href="#" class="small-btn">Откликнуться</a>
+  <picture>
+    <source srcset="<%=require('../uploads/images/ya-logo-mobile.png')%>" media="(max-width: 576px)"/>
+    <img class="main-logo" src="<%=require('../uploads/images/ru-logo-short.svg')%>" alt="Основной логотип">
+  </picture>
+  <a href="#" class="header__btn small-btn">Откликнуться</a>
+  <div class="burger"></div>
+  <nav class="header__menu">
+    <ul class="header__menu-list">
+      <li class="header__menu-item"><a href="#" class="header__menu-link">Что делает наставник</a></li>
+      <li class="header__menu-item"><a href="#" class="header__menu-link">Что делает ревьвер</a></li>
+      <li class="header__menu-item"><a href="#" class="header__menu-link">Открытые предложения</a></li>
+      <li class="header__menu-item"><a href="#" class="header__menu-link">FAQ</a></li>
+      <li class="header__menu-item"><a href="#" class="header__menu-link">Отклик на вакансию</a></li>
+    </ul>
+    <button type="button" class="header__menu-close-btn"></button>
+  </nav>
 </header>
 
 <main class="content">

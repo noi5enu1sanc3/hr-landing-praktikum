@@ -10,8 +10,9 @@ import {
   ROLE_CARD_CLASS_CONFIG,
   BUTTON_TABS_CONFIG,
   OFFERS_ITEM_SELECTOR_CONFIG,
-  ACCORDION_SELECTOR_CONFIG,
+  ACCORDION_SELECTOR_CONFIG, BURGER_NAME_CONFIG,
 } from './utils/constants';
+import { Burger } from './components/Burger';
 
 
 const roleCardLeft = new RoleCard(
@@ -74,3 +75,6 @@ filterOffers.renderData(offersData)
 
 const accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
+
+const burger = new Burger(BURGER_NAME_CONFIG);
+burger.setEventListeners();
