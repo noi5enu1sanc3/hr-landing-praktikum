@@ -97,7 +97,7 @@ export default class FilterOffers {
         item => item !== this._getAttribute(event.target)
       );
     }
-    this.renderData(this._getFilterData());//эти обработчики должны не рендерить данные а выдавать их - их должна принять пагинация и выдать на рендер
+    this.renderData(this._getFilterData());
   }
 
   _isButtonActive(button) {
