@@ -95,7 +95,7 @@ export default class Quiz {
       this._result += 1;
     }
 
-    if (this._currentQuestion > 9) {
+    if (this._currentQuestion > this._data.length) {
       this._renderResult();
     } else {
       this._renderQuiz();
