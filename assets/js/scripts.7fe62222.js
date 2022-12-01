@@ -587,7 +587,32 @@ var VideoLoad = /*#__PURE__*/function () {
   }]);
   return VideoLoad;
 }();
+;// CONCATENATED MODULE: ./src/js/components/AnchorScroll.js
+function AnchorScroll_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function AnchorScroll_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function AnchorScroll_createClass(Constructor, protoProps, staticProps) { if (protoProps) AnchorScroll_defineProperties(Constructor.prototype, protoProps); if (staticProps) AnchorScroll_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+var AnchorScroll = /*#__PURE__*/function () {
+  function AnchorScroll(documentElement) {
+    AnchorScroll_classCallCheck(this, AnchorScroll);
+    this._documentElement = documentElement;
+  }
+  AnchorScroll_createClass(AnchorScroll, [{
+    key: "setAnchorScroll",
+    value: function setAnchorScroll() {
+      this._documentElement.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (event) {
+          event.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+    }
+  }]);
+  return AnchorScroll;
+}();
 ;// CONCATENATED MODULE: ./src/js/index.js
+
 
 
 
@@ -641,9 +666,11 @@ quiz.setEventListeners();
 quiz.startQuiz();
 var video = new VideoLoad(VIDEO_SELECTOR_CONFIG);
 video.setEventListener();
+var anchorScroll = new AnchorScroll(document);
+anchorScroll.setAnchorScroll();
 ;// CONCATENATED MODULE: ./src/app.js
 
 
 /******/ })()
 ;
-//# sourceMappingURL=scripts.f89e74e8.js.map
+//# sourceMappingURL=scripts.7fe62222.js.map
