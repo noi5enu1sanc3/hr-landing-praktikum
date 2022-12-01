@@ -10,12 +10,13 @@ export class Burger {
   }
 
   _openMenu() {
-    console.log(this._headerNavigationMenuElement);
     this._headerNavigationMenuElement.classList.add(`${this._headerNavigationMenuName}_is-active`);
+    this._burgerOpeningButtonElement.classList.add(`${this._burgerOpeningButtonName}_is-active`);
   }
 
   _closeMenu() {
     this._headerNavigationMenuElement.classList.remove(`${this._headerNavigationMenuName}_is-active`);
+    this._burgerOpeningButtonElement.classList.remove(`${this._burgerOpeningButtonName}_is-active`);
   }
 
   setEventListeners() {
