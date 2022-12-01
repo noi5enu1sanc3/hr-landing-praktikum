@@ -15,4 +15,9 @@
   line-height: 1.29;
   color: white;
   text-decoration: none;
+  transition: background-color 0.2s ease-in-out
+}
+
+.small-btn:hover {
+  background-color: #555555;
 }
