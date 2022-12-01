@@ -5,7 +5,6 @@ export class VideoLoad {
   }
 
   _activateVideo() {
-    console.log(this._videoElement);
     this._videoElement.classList.add('video-history__video_is-played');
     this._videoElement.autoplay = true;
     this._videoElement.load();

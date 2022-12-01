@@ -67,7 +67,6 @@ export default class FilterOffers {
     this._shouldFilterBySalary(this._activeFilters)
       ? this._filteringBy.add('salary')
       : this._filteringBy.delete('salary');
-    console.log(this._filteringBy);
   }
 
   _getFilterData() {

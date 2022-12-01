@@ -10,7 +10,6 @@ export class Burger {
   }
 
   _openMenu() {
-    console.log(this._headerNavigationMenuElement);
     this._headerNavigationMenuElement.classList.add(`${this._headerNavigationMenuName}_is-active`);
   }
 
