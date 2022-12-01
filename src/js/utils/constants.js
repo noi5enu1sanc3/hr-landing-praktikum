@@ -33,6 +33,11 @@ export const OFFERS_ITEM_SELECTOR_CONFIG = {
   itemSelector: '.tabs__content-link',
   titleSelector: '.tabs__content-title',
   contentSelector: '.tabs__content-text',
+  paginationListSelector: '.tabs__pagination-list',
+  paginationTemplateSelector: '.tabs_pagination-item-template',
+  paginationItemSelector: '.tabs__pagination-item',
+  paginationBackButtonSelector: '.content-item__btn_direction_back',
+  paginationNextButtonSelector: '.content-item__btn_direction_next',
 };
 
 export const ACCORDION_SELECTOR_CONFIG = {

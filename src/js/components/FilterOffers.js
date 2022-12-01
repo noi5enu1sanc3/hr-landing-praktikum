@@ -1,5 +1,7 @@
 export default class FilterOffers {
-  constructor(data, buttonsConfig, { rendererData }, { filterUtils }) {
+  constructor(data, buttonsConfig,
+    { rendererData },
+    { filterUtils }) {
     this._data = data;
     this._rendererData = rendererData;
 
@@ -25,6 +27,10 @@ export default class FilterOffers {
     this._activeFilters = []; //массив всех условий, по которым производится фильтрация
   }
 
+  getFilterData() {
+
+  }
+
   _resetFilters() {
     this._filteringBy.clear();
     this._activeFilters = [];
@@ -43,7 +49,7 @@ export default class FilterOffers {
       : this._buttonResetElement.classList.remove(this._hiddenResetButtonClass);
   }
 
-  renderData(data = this._data) {
+  renderData(data) {
     this._handleResetButtonDisplay();
     this._rendererData(data);
   }
@@ -127,7 +133,6 @@ export default class FilterOffers {
         item => item !== parseInt(this._getAttribute(event.target))
       );
     }
-    console.log(this._activeFilters);
     this.renderData(this._getFilterData());
   }
 

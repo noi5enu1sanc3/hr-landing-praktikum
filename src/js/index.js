@@ -27,6 +27,7 @@ import {
 import { Burger } from './components/Burger';
 import { VideoLoad } from './components/VideoLoad';
 import { AnchorScroll } from './components/AnchorScroll';
+import { Pagination } from './components/Pagination';
 
 const roleCardLeft = new RoleCard(
   ROLE_CARD_SELECTOR_CONFIG.leftCardSelector,
@@ -85,8 +86,8 @@ const filterOffers = new FilterOffers(
   {
     rendererData: data => {
       offersList.clearList();
-      offersList.render(data);
-      anchorScroll.setAnchorScroll();
+      offersList.render(pagination.setCurrentData(data));
+      pagination.renderPagination();
     },
   },
   {
@@ -100,7 +101,20 @@ const filterOffers = new FilterOffers(
 
 filterOffers.setEventListeners();
 
-filterOffers.renderData(offersData);
+// 14 - десктоп
+// 9 - планшет
+// 8 - мобилка
+
+const pagination = new Pagination(offersData, OFFERS_ITEM_SELECTOR_CONFIG,
+  {
+    rendererData: data => {
+      offersList.clearList();
+      offersList.render(data);
+    },
+  },);
+  pagination.renderPagination();
+  filterOffers.renderData(offersData);
+  pagination.setEventListeners();
 
 const accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
@@ -117,3 +131,5 @@ quiz.startQuiz();
 const video = new VideoLoad(VIDEO_SELECTOR_CONFIG);
 video.setEventListener();
 
+const anchorScroll = new AnchorScroll(document);
+anchorScroll.setAnchorScroll();
