@@ -68,14 +68,6 @@ export class Pagination {
 
     this._currentData = this._data.slice(this._start, this._end);
 
-    console.log('total pages ', this._totalPages);
-    console.log('data length ', this._data.length);
-    console.log('current Page ', this._currentPage);
-    console.log('start ', this._start);
-    console.log('end ', this._end);
-    console.log('data ', this._data);
-    console.log(this._currentData);
-
     return this._currentData; //метод возвращающий наружу элементы для рендеринга текущей страницы
   }
 }

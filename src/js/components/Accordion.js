@@ -5,7 +5,6 @@ export class Accordion {
 
   _toggleAccordion(element) {
     const currentButtonAtrElement = element.getAttribute('aria-expanded');
-    console.log(currentButtonAtrElement);
     for (let i = 0; i < this._accordionButtonElements.length; i++) {
       this._accordionButtonElements[i].setAttribute('aria-expanded', 'false');
     }
