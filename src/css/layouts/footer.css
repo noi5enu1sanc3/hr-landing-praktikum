@@ -130,3 +130,13 @@
     text-decoration: none;
     color: var(--black-ya-color);
   }
+
+  @media screen and (max-width: 575px) {
+    .footer {
+      margin: 8px 0 0;
+    }
+
+    .footer__top-of-footer {
+      margin: 0;
+    }
+  }
