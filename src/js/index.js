@@ -77,20 +77,14 @@ const offersList = new List(
   OFFERS_ITEM_SELECTOR_CONFIG
 );
 
-
 const filterOffers = new FilterOffers(
   offersData,
   BUTTON_TABS_CONFIG,
-  // {
-  //   rendererData: data => {
-  //     offersList.clearList();
-  //     offersList.render(data);
-  //   },
-  // },
   {
     rendererData: data => {
       offersList.clearList();
       offersList.render(pagination.setCurrentData(data));
+      pagination.renderPagination();
     },
   },
   {
@@ -102,10 +96,22 @@ const filterOffers = new FilterOffers(
   }
 );
 
-
-
 filterOffers.setEventListeners();
-//filterOffers.renderData();
+
+// 14 - десктоп
+// 9 - планшет
+// 8 - мобилка
+
+const pagination = new Pagination(offersData, OFFERS_ITEM_SELECTOR_CONFIG,
+  {
+    rendererData: data => {
+      offersList.clearList();
+      offersList.render(data);
+    },
+  },);
+  pagination.renderPagination();
+  filterOffers.renderData(offersData);
+  pagination.setEventListeners();
 
 const accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
@@ -124,18 +130,3 @@ video.setEventListener();
 
 const anchorScroll = new AnchorScroll(document);
 anchorScroll.setAnchorScroll();
-
-
-
-// 14 - десктоп
-// 9 - планшет
-// 8 - мобилка
-
-const pagination = new Pagination(offersData, OFFERS_ITEM_SELECTOR_CONFIG,
-  {
-    rendererData: data => {
-      offersList.clearList();
-      offersList.render(data);
-    },
-  },);
-filterOffers.renderData(offersData);

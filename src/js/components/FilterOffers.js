@@ -133,7 +133,6 @@ export default class FilterOffers {
         item => item !== parseInt(this._getAttribute(event.target))
       );
     }
-    console.log(this._activeFilters);
     this.renderData(this._getFilterData());
   }
 
