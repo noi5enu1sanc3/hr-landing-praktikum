@@ -25,6 +25,10 @@ export default class FilterOffers {
     this._activeFilters = []; //массив всех условий, по которым производится фильтрация
   }
 
+  getFilterData() {
+
+  }
+
   _resetFilters() {
     this._filteringBy.clear();
     this._activeFilters = [];
@@ -43,7 +47,7 @@ export default class FilterOffers {
       : this._buttonResetElement.classList.remove(this._hiddenResetButtonClass);
   }
 
-  renderData(data = this._data) {
+  renderData(data) {
     this._handleResetButtonDisplay();
     this._rendererData(data);
   }

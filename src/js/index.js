@@ -27,6 +27,7 @@ import {
 import { Burger } from './components/Burger';
 import { VideoLoad } from './components/VideoLoad';
 import { AnchorScroll } from './components/AnchorScroll';
+import { Pagination } from './components/Pagination';
 
 const roleCardLeft = new RoleCard(
   ROLE_CARD_SELECTOR_CONFIG.leftCardSelector,
@@ -76,6 +77,8 @@ const offersList = new List(
   OFFERS_ITEM_SELECTOR_CONFIG
 );
 
+
+
 const filterOffers = new FilterOffers(
   offersData,
   BUTTON_TABS_CONFIG,
@@ -95,8 +98,7 @@ const filterOffers = new FilterOffers(
 );
 
 filterOffers.setEventListeners();
-
-filterOffers.renderData(offersData);
+filterOffers.renderData();
 
 const accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
@@ -115,3 +117,12 @@ video.setEventListener();
 
 const anchorScroll = new AnchorScroll(document);
 anchorScroll.setAnchorScroll();
+
+
+// 14 - десктоп
+// 9 - планшет
+// 8 - мобилка.
+// Для обрезания массива используем slice
+
+const pagination = new Pagination(OFFERS_ITEM_SELECTOR_CONFIG);
+pagination.renderPagination();
