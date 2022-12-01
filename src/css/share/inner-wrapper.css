@@ -3,14 +3,15 @@
   max-width: 1200px;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 800px) {
   .inner-wrapper {
     width: calc(100% - 20px);
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 575px) {
   .inner-wrapper {
     width: 100%;
   }
 }
+

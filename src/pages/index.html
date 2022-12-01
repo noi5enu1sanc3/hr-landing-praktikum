@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html id="root" lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -40,7 +40,8 @@
   <header class="header inner-wrapper">
     <picture>
       <source srcset="<%=require('../uploads/images/ya-logo-mobile.png')%>" media="(max-width: 576px)" />
-      <img class="main-logo" src="<%=require('../uploads/images/ru-logo-short.svg')%>" alt="Основной логотип">
+      <a href="#root"><img class="main-logo" src="<%=require('../uploads/images/ru-logo-short.svg')%>"
+                        alt="Основной логотип"></a>
     </picture>
     <a href="#response" class="header__btn small-btn">Откликнуться</a>
     <div class="burger"></div>
