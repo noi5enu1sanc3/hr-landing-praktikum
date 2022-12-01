@@ -63,7 +63,8 @@
   flex-direction: column;
   justify-content: space-between;
   z-index: 5;
-  width: 544px;
+  /* width: 544px; */
+  width: 484px;
 }
 
 .roles__main_right {
@@ -116,7 +117,8 @@
   width: 48%;
   height: 100%;
   margin-left: 0;
-  transition: all .4s ease-in;
+  transition: opacity .4s ease-in;
+  transition-delay: .6s;
 }
 
 .roles__details_opened-right {
@@ -125,7 +127,8 @@
   width: 48%;
   height: 100%;
   margin-right: 0;
-  transition: all .4s ease-in;
+  transition: opacity .4s ease-in;
+  transition-delay: .6s;
 }
 
 .roles__details-content {
