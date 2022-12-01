@@ -527,8 +527,8 @@
       <form name="candidate-response" class="response__form" id="response-form">
         <fieldset class="response__inputs" form="response-form">
           <div class="response__container-1">
-            <input id="dontfind" type="checkbox" checked="checked" name="dontfind" class="response__checkbox" />
-            <label for="dontfind" class="response__label">Не нашел интересующую вакансию</label>
+            <input id="dontfind" type="checkbox" name="dontfind" class="response__checkbox" />
+            <label for="dontfind" class="response__label">Не нашел интересующую специализацию</label>
           </div>
 
           <div class="response__container-for-inputs">
@@ -552,10 +552,11 @@
           </div>
 
           <input id="addfile" class="response__addfile" type="file" name="addfile" />
+          <label class="response__addfile-label" for="addfile">Прикрепить файл</label>
           <div class="response__container-2">
-            <div class="response__extra-container">
-              <input id="agreement" type="checkbox" name="agreement" class="response__checkbox" />
-              <label for="agreement" class="response__label"> Я даю согласие АНО ДПО «ШАД» и ООО «ЯНДЕКС» на обработку
+            <div class="response__extra-container response__extra-container_small">
+              <input id="agreement" type="checkbox" name="agreement" class="response__checkbox response__checkbox_small" />
+              <label for="agreement" class="response__label response__label_small"> Я даю согласие АНО ДПО «ШАД» и ООО «ЯНДЕКС» на обработку
                 указанных данных для целей рассмотрения анкеты и обратной
                 связи по ней.</label>
             </div>
