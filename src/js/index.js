@@ -26,6 +26,7 @@ import {
 } from './utils/constants';
 import { Burger } from './components/Burger';
 import { VideoLoad } from './components/VideoLoad';
+import { AnchorScroll } from './components/AnchorScroll';
 
 const roleCardLeft = new RoleCard(
   ROLE_CARD_SELECTOR_CONFIG.leftCardSelector,
@@ -111,3 +112,6 @@ quiz.startQuiz();
 
 const video = new VideoLoad(VIDEO_SELECTOR_CONFIG);
 video.setEventListener();
+
+const anchorScroll = new AnchorScroll(document);
+anchorScroll.setAnchorScroll();
