@@ -87,13 +87,15 @@
   .footer__text-free {
     font-weight: 400;
     font-size: 14px;
-    line-height: 20px;
+    line-height: 1.4;
     opacity: 0.5;
   }
   .footer__telephone {
     font-weight: 400;
     font-size: 22px;
-    line-height: 32px;
+    line-height: 1.45;
+    text-decoration: none;
+    color: #262626;
   }
   .footer__a {
     font-weight: 500;
