@@ -22,12 +22,13 @@ import {
   BURGER_NAME_CONFIG,
   QUIZ_BUTTONS_CONFIG,
   QUIZ_CONTENT_CONFIG,
-  VIDEO_SELECTOR_CONFIG,
+  VIDEO_SELECTOR_CONFIG, FORM_SELECTOR_CONFIG,
 } from './utils/constants';
 import { Burger } from './components/Burger';
 import { VideoLoad } from './components/VideoLoad';
 import { AnchorScroll } from './components/AnchorScroll';
 import { Pagination } from './components/Pagination';
+import { OptionsSpecializations } from './components/OptionsSpecializations';
 
 const roleCardLeft = new RoleCard(
   ROLE_CARD_SELECTOR_CONFIG.leftCardSelector,
@@ -130,3 +131,7 @@ video.setEventListener();
 
 const anchorScroll = new AnchorScroll(document);
 anchorScroll.setAnchorScroll();
+
+const optionsSpecializations = new OptionsSpecializations(offersData, FORM_SELECTOR_CONFIG);
+optionsSpecializations.render();
+optionsSpecializations.setEventListeners();

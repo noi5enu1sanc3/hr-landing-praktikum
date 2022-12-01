@@ -522,7 +522,7 @@
         Поставь галочку ниже, оставь свои данные и&nbsp;мы&nbsp;с&nbsp;тобой свяжемся в
         ближайшее время.
       </p>
-      <form name="candidate-response" class="response__form" id="response-form">
+      <form enctype="multipart/form-data" name="candidate-response" class="response__form" id="response-form">
         <fieldset class="response__inputs" form="response-form">
           <div class="response__container-1">
             <input id="dontfind" type="checkbox" name="dontfind" class="response__checkbox" />
@@ -530,23 +530,26 @@
           </div>
 
           <div class="response__container-for-inputs">
-            <select name="profession" id="" class="response__select">
-              <option value="nastavnik">Роль</option>
-              <option value="sometext">Наставник</option>
+            <select name="post" id="direction" class="response__select post">
+              <option value="mentor">Наставник</option>
+              <option value="reviewer">Ревьюер</option>
             </select>
-            <select name="kind-of-art" id="" class="response__select">
-              <option value="designйн">Направление</option>
-              <option value="sometext">Дизайн</option>
+            <select name="direction" id="kind-of-art" class="response__select direction">
+              <option value="programming">Программирование</option>
+              <option value="design">Дизайн</option>
+              <option value="marketing">Маркетинг</option>
+              <option value="management">Менеджмент</option>
             </select>
-            <select name="job" id="" class="response__select">
-              <option value="vacancy" placeholder="Вакансия">Специализация</option>
+            <select name="specialization" id="specialization" class="response__select specialization">
+              <template class="specialization__item-template">
+                <option class="specialization__item" value=""></option>
+              </template>
               <!-- <option value="sometext"></option> -->
             </select>
-
-            <input type="text" placeholder="Имя" value="" name="name" class="response__input" required />
-            <input type="tel" placeholder="Телефон" value="" name="tel" class="response__input" required />
-            <input type="email" placeholder="Эл. адрес" value="" name="email" class="response__input" required />
-            <textarea class="response__textarea" rows="5" cols="20" placeholder="Стек технологий (для программистов) или твои навыки, любая информация, которой ты хочешь поделиться"></textarea>
+            <input id="name" type="text" placeholder="Имя" value="" name="name" class="response__input" required />
+            <input id="tel" type="tel" placeholder="Телефон" value="" name="tel" class="response__input" required />
+            <input id="email" type="email" placeholder="Эл. адрес" value="" name="email" class="response__input" required />
+            <textarea name="text" class="response__textarea" rows="5" cols="20" placeholder="Стек технологий (для программистов) или твои навыки, любая информация, которой ты хочешь поделиться"></textarea>
           </div>
 
           <input id="addfile" class="response__addfile" type="file" name="addfile" />

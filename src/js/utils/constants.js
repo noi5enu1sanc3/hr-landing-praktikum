@@ -73,3 +73,11 @@ export const QUIZ_CONTENT_CONFIG = {
   optionsTextSelector: '.quiz__option',
   hiddenContentClass: 'quiz__hidden',
 }
+
+export const FORM_SELECTOR_CONFIG = {
+  postSelector: 'post',
+  directionSelector: 'direction',
+  specializationItemTemplateSelector: 'specialization__item-template',
+  specializationItemSelector: 'specialization__item',
+  specializationContainerSelector: 'specialization'
+}
