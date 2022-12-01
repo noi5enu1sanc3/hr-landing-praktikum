@@ -372,7 +372,7 @@ var Quiz = /*#__PURE__*/function () {
       } else {
         this._result += 1;
       }
-      if (this._currentQuestion > 9) {
+      if (this._currentQuestion > this._data.length) {
         this._renderResult();
       } else {
         this._renderQuiz();
@@ -673,4 +673,4 @@ anchorScroll.setAnchorScroll();
 
 /******/ })()
 ;
-//# sourceMappingURL=scripts.7fe62222.js.map
+//# sourceMappingURL=scripts.355caf1b.js.map
