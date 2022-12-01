@@ -29,6 +29,11 @@
   font-size: 20px;
   line-height: 1;
   letter-spacing: -0.5px;
+  transition: color 0.2s ease-in-out;
+}
+
+.tabs__btn-reset:hover {
+  color: #262626;
 }
 
 .tabs__btn-reset_hidden {
@@ -82,6 +87,11 @@
   font-weight: 500;
   color: #262626;
   cursor: pointer;
+  transition: filter 0.2s ease-in-out;
+}
+
+.tabs__btn:hover {
+  filter: brightness(95%);
 }
 
 .tabs__btn_active {
@@ -147,6 +157,11 @@
   display: grid;
   grid-template-rows: 1fr auto auto;
   text-decoration: none;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.tabs__content-link:hover {
+  box-shadow: 0px 2px 120px 12px rgba(36, 36, 36, 0.2)
 }
 
 .tabs__content-link:nth-child(7n+1),
