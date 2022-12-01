@@ -1,5 +1,7 @@
 export default class FilterOffers {
-  constructor(data, buttonsConfig, { rendererData }, { filterUtils }) {
+  constructor(data, buttonsConfig,
+    { rendererData },
+    { filterUtils }) {
     this._data = data;
     this._rendererData = rendererData;
 
@@ -95,7 +97,7 @@ export default class FilterOffers {
         item => item !== this._getAttribute(event.target)
       );
     }
-    this.renderData(this._getFilterData());
+    this.renderData(this._getFilterData());//эти обработчики должны не рендерить данные а выдавать их - их должна принять пагинация и выдать на рендер
   }
 
   _isButtonActive(button) {

@@ -78,7 +78,6 @@ const offersList = new List(
 );
 
 
-
 const filterOffers = new FilterOffers(
   offersData,
   BUTTON_TABS_CONFIG,
@@ -97,8 +96,23 @@ const filterOffers = new FilterOffers(
   }
 );
 
+// const filterOffers = new FilterOffers(
+//   offersData,
+//   BUTTON_TABS_CONFIG,
+//   {
+//     rendererData: data => pagination.renderData(data)
+//   },
+//   {
+//     filterUtils: {
+//       filterByPost: filterByPost,
+//       filterByDirection: filterByDirection,
+//       filterBySalary: filterBySalary,
+//     },
+//   }
+// );
+
 filterOffers.setEventListeners();
-filterOffers.renderData();
+//filterOffers.renderData();
 
 const accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
@@ -121,8 +135,10 @@ anchorScroll.setAnchorScroll();
 
 // 14 - десктоп
 // 9 - планшет
-// 8 - мобилка.
-// Для обрезания массива используем slice
+// 8 - мобилка
 
-const pagination = new Pagination(OFFERS_ITEM_SELECTOR_CONFIG);
+const pagination = new Pagination(offersData, OFFERS_ITEM_SELECTOR_CONFIG
+  );
 pagination.renderPagination();
+//pagination.setCurrentData()
+// filterOffers.renderData(pagination.setCurrentData(filterOffers._getFilterData()))
