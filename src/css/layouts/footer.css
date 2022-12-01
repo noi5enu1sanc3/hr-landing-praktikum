@@ -1,8 +1,7 @@
 .footer {
-  margin: auto;
   background-color: var(--white-color);
   padding: 0 20px 60px;
-  margin-top: 12px;
+  margin: 12px auto 0;
 }
 @media screen and (max-width: 725px) {
   .footer {
@@ -62,7 +61,6 @@
   }
   .footer__top-of-footer {
     display: flex;
-    margin-top: 33px;
   }
   @media screen and (max-width: 725px) {
     .footer__top-of-footer {
