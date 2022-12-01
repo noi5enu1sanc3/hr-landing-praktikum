@@ -31,6 +31,9 @@ var FilterOffers = /*#__PURE__*/function () {
     this._activeFilters = []; //массив всех условий, по которым производится фильтрация
   }
   _createClass(FilterOffers, [{
+    key: "getFilterData",
+    value: function getFilterData() {}
+  }, {
     key: "_resetFilters",
     value: function _resetFilters() {
       var _this = this;
@@ -51,8 +54,7 @@ var FilterOffers = /*#__PURE__*/function () {
     }
   }, {
     key: "renderData",
-    value: function renderData() {
-      var data = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this._data;
+    value: function renderData(data) {
       this._handleResetButtonDisplay();
       this._rendererData(data);
     }
@@ -125,7 +127,6 @@ var FilterOffers = /*#__PURE__*/function () {
           return item !== parseInt(_this4._getAttribute(event.target));
         });
       }
-      console.log(this._activeFilters);
       this.renderData(this._getFilterData());
     }
   }, {
@@ -436,7 +437,7 @@ var RoleCard = /*#__PURE__*/function () {
 }();
 
 ;// CONCATENATED MODULE: ./src/js/utils/offersData.json
-const offersData_namespaceObject = JSON.parse('[{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000}]');
+const offersData_namespaceObject = JSON.parse('[{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"programming","name":"Наставник на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"mentor","direction":"design","name":"Наставник на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"mentor","direction":"design","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"mentor","direction":"marketing","name":"Наставник на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"mentor","direction":"management","name":"Наставник на курс «Менеджер проектов»","text":"В среднем 65 000₽","salary":65000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Разработчик C++»","text":"В среднем 45 000 ₽ в месяц","salary":45000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Дизайнер интерфейсов»","text":"В среднем 40 000₽","salary":40000},{"post":"reviewer","direction":"design","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 35 000₽","salary":35000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Графический дизайнер»","text":"В среднем 30 000₽","salary":30000},{"post":"reviewer","direction":"marketing","name":"Ревьювер на курс «Интернет-маркетолог»","text":"В среднем 50 000₽","salary":50000},{"post":"reviewer","direction":"programming","name":"Ревьювер на курс «Мидл фронтенд-разработчик»","text":"В среднем 65 000₽","salary":65000}]');
 ;// CONCATENATED MODULE: ./src/js/utils/quizData.json
 const quizData_namespaceObject = JSON.parse('[{"question":"«У меня точно есть лидерские качества, я умею вдохновлять и вести людей за собой» — сказали бы так про себя?","option1":{"text":"Конечно! Что есть, то есть.","result":"mentor"},"option2":{"text":"Скорее нет, но хочу работать над этим.","result":"reviewer"}},{"question":"С лидерством разобрались, а вот умение поддержать и подбодрить человека у вас есть?","option1":{"text":"Да! Не знаю, откуда это во мне.","result":"mentor"},"option2":{"text":"Нет, обычно мне сложно подобрать нужные слова.","result":"reviewer"}},{"question":"Что выберете — живое общение или переписку?","option1":{"text":"Всегда за первое, однозначно!","result":"mentor"},"option2":{"text":"Второе. Почти всё можно легко обсудить в тексте.","result":"reviewer"}},{"question":"Только честно, у вас получается сохранять терпение и сосредоточенно выполнять монотонную работу?","option1":{"text":"О, нет… Не люблю таким заниматься.","result":"mentor"},"option2":{"text":"Да! Усидчивость — моё второе имя.","result":"reviewer"}},{"question":"Предположим, вас просят выступить перед аудиторией — ваша реакция?","option1":{"text":"Пф, меня и просить не надо! Дайте 10 минут на подготовку и могу начинать.","result":"mentor"},"option2":{"text":"Сделаю вид, что меня нет. Выступать — это дикий стресс.","result":"reviewer"}},{"question":"Разберём ещё одну ситуацию. Представим, вы проверяете домашнее задание студента, а в нём — катастрофическое количество ошибок. Что больше похоже на вас:","option1":{"text":"Найду этого студента и расскажу, как всё исправить. Готов объяснять, пока не поймёт на 100%.","result":"mentor"},"option2":{"text":"Отмечу все ошибки и покажу, что нужно исправить. Пусть ещё раз подумает и пересдаст работу.","result":"reviewer"}},{"question":"Как бы вы охарактеризовали этап, на котором вы сейчас находитесь?","option1":{"text":"Уже накопил кучу интересных кейсов и хочу ими поделиться!","result":"mentor"},"option2":{"text":"Пока нарабатываю личный опыт и коплю интересные кейсы в работе.","result":"reviewer"}},{"question":"На ваш взгляд, самое крутое в профессии учителя — это…","option1":{"text":"Получать кучу конфет и цветов на День Учителя.","result":"mentor"},"option2":{"text":"Ставить оценки в тетрадях красной ручкой!","result":"reviewer"}},{"question":"Какое действие тебе сейчас сильнее хочется осуществить?","option2":{"text":"Оценить тест","result":"mentor"},"option1":{"text":"Дать себе напутственную речь","result":"reviewer"}}]');
 ;// CONCATENATED MODULE: ./src/js/utils/filterHelper.js
@@ -488,7 +489,12 @@ var OFFERS_ITEM_SELECTOR_CONFIG = {
   itemTemplateSelector: '.tabs__content-item-template',
   itemSelector: '.tabs__content-link',
   titleSelector: '.tabs__content-title',
-  contentSelector: '.tabs__content-text'
+  contentSelector: '.tabs__content-text',
+  paginationListSelector: '.tabs__pagination-list',
+  paginationTemplateSelector: '.tabs_pagination-item-template',
+  paginationItemSelector: '.tabs__pagination-item',
+  paginationBackButtonSelector: '.content-item__btn_direction_back',
+  paginationNextButtonSelector: '.content-item__btn_direction_next'
 };
 var ACCORDION_SELECTOR_CONFIG = {
   accordionButton: '.accordion__header'
@@ -512,8 +518,8 @@ var QUIZ_CONTENT_CONFIG = {
   quizBlockSelector: '.quiz__questions-block',
   resultBlockSelector: '.quiz__result-block',
   resultTextSelector: '.quiz__result-role',
-  resultYellowTextClass: '.quiz__result-role_accent_yellow',
-  resultAquamarineTextClass: '.quiz__result-role_accent_aquamarine',
+  resultYellowTextClass: 'quiz__result-role_accent_yellow',
+  resultAquamarineTextClass: 'quiz__result-role_accent_aquamarine',
   questionNumberSelector: '.quiz__question-number',
   questionTextSelector: '.quiz__question',
   optionsTextSelector: '.quiz__option',
@@ -611,7 +617,124 @@ var AnchorScroll = /*#__PURE__*/function () {
   }]);
   return AnchorScroll;
 }();
+;// CONCATENATED MODULE: ./src/js/components/Pagination.js
+function Pagination_classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function Pagination_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function Pagination_createClass(Constructor, protoProps, staticProps) { if (protoProps) Pagination_defineProperties(Constructor.prototype, protoProps); if (staticProps) Pagination_defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+var Pagination = /*#__PURE__*/function () {
+  function Pagination(data, configSelectors, _ref) {
+    var rendererData = _ref.rendererData;
+    Pagination_classCallCheck(this, Pagination);
+    this._data = data;
+    this._rendererData = rendererData;
+    // Шаблон
+    this._templatePaginationTemplate = document.querySelector(configSelectors.paginationTemplateSelector).content;
+
+    // Селекторы
+    this._paginationItemSelector = configSelectors.paginationItemSelector;
+    this._paginationListElement = document.querySelector(configSelectors.paginationListSelector);
+    this._paginationBackButtonElement = document.querySelector(configSelectors.paginationBackButtonSelector);
+    this._paginationNextButtonElement = document.querySelector(configSelectors.paginationNextButtonSelector);
+    console.log(this._paginationBackButtonElement);
+    this._currentPageClass = configSelectors.currentPageClass;
+    this._itemsPerPage = 10; //temp, will use resize
+
+    this._totalPages = Math.ceil(this._data.length / this._itemsPerPage);
+    this._currentPage = 1;
+  }
+
+  // Получаем шаблон предложения
+  Pagination_createClass(Pagination, [{
+    key: "_getTemplate",
+    value: function _getTemplate() {
+      var itemElement = this._templatePaginationTemplate.querySelector(this._paginationItemSelector).cloneNode(true);
+      return itemElement;
+    }
+
+    // Генерируем элемент, принимаем на вход номер страницы.
+  }, {
+    key: "_generatePaginationItem",
+    value: function _generatePaginationItem(number) {
+      var _this = this;
+      this._itemElement = this._getTemplate();
+      this._itemElement.textContent = number;
+      this._itemElement.addEventListener('click', function (event) {
+        _this._rendererData(_this.setCurrentData(_this._data, number));
+
+        //add active class
+        _this._renderActivePage(event.target);
+      });
+      return this._itemElement;
+    }
+  }, {
+    key: "_addItem",
+    value: function _addItem(element) {
+      this._paginationListElement.append(element);
+    }
+  }, {
+    key: "renderPagination",
+    value: function renderPagination() {
+      this._paginationListElement.innerHTML = '';
+      for (var i = 1; i <= this._totalPages; i++) {
+        this._addItem(this._generatePaginationItem(i));
+      }
+      this._renderActivePage(this._paginationListElement.querySelectorAll(this._paginationItemSelector)[0]);
+    }
+  }, {
+    key: "_renderActivePage",
+    value: function _renderActivePage(element) {
+      this._paginationListElement.querySelectorAll(this._paginationItemSelector).forEach(function (item) {
+        item.classList.remove('tabs__pagination-item_active');
+      });
+      element === null || element === void 0 ? void 0 : element.classList.add('tabs__pagination-item_active');
+    }
+  }, {
+    key: "_goBack",
+    value: function _goBack() {
+      console.log('back');
+      this.setCurrentData(this._data, this._currentPage - 1);
+    }
+  }, {
+    key: "_goNext",
+    value: function _goNext() {
+      this.setCurrentData(this._data, this._currentPage + 1);
+    }
+  }, {
+    key: "setCurrentData",
+    value: function setCurrentData(data) {
+      var pageNumber = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 1;
+      this._currentPage = pageNumber;
+      this._end = this._currentPage * this._itemsPerPage;
+      this._start = this._end - this._itemsPerPage;
+      this._data = data;
+      this._totalPages = Math.ceil(this._data.length / this._itemsPerPage);
+      this._currentData = this._data.slice(this._start, this._end);
+      console.log('total pages ', this._totalPages);
+      console.log('data length ', this._data.length);
+      console.log('current Page ', this._currentPage);
+      console.log('start ', this._start);
+      console.log('end ', this._end);
+      console.log('data ', this._data);
+      console.log(this._currentData);
+      return this._currentData; //метод возвращающий наружу элементы для рендеринга текущей страницы
+    }
+  }, {
+    key: "setEventListeners",
+    value: function setEventListeners() {
+      var _this2 = this;
+      this._paginationBackButtonElement.addEventListener('click', function () {
+        return _this2._goBack();
+      });
+      this._paginationNextButtonElement.addEventListener('click', function () {
+        return _this2._goNext();
+      });
+      console.log(this._paginationNextButtonElement);
+    }
+  }]);
+  return Pagination;
+}();
 ;// CONCATENATED MODULE: ./src/js/index.js
+
 
 
 
@@ -641,13 +764,11 @@ var offersList = new List({
     offersList.addItem(offer);
   }
 }, OFFERS_ITEM_SELECTOR_CONFIG);
-var anchorScroll = new AnchorScroll(document);
-anchorScroll.setAnchorScroll();
 var filterOffers = new FilterOffers(offersData_namespaceObject, BUTTON_TABS_CONFIG, {
   rendererData: function rendererData(data) {
     offersList.clearList();
-    offersList.render(data);
-    anchorScroll.setAnchorScroll();
+    offersList.render(pagination.setCurrentData(data));
+    pagination.renderPagination();
   }
 }, {
   filterUtils: {
@@ -657,7 +778,20 @@ var filterOffers = new FilterOffers(offersData_namespaceObject, BUTTON_TABS_CONF
   }
 });
 filterOffers.setEventListeners();
+
+// 14 - десктоп
+// 9 - планшет
+// 8 - мобилка
+
+var pagination = new Pagination(offersData_namespaceObject, OFFERS_ITEM_SELECTOR_CONFIG, {
+  rendererData: function rendererData(data) {
+    offersList.clearList();
+    offersList.render(data);
+  }
+});
+pagination.renderPagination();
 filterOffers.renderData(offersData_namespaceObject);
+pagination.setEventListeners();
 var accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();
 var burger = new Burger(BURGER_NAME_CONFIG);
@@ -669,9 +803,11 @@ quiz.setEventListeners();
 quiz.startQuiz();
 var video = new VideoLoad(VIDEO_SELECTOR_CONFIG);
 video.setEventListener();
+var anchorScroll = new AnchorScroll(document);
+anchorScroll.setAnchorScroll();
 ;// CONCATENATED MODULE: ./src/app.js
 
 
 /******/ })()
 ;
-//# sourceMappingURL=scripts.a2a7840f.js.map
+//# sourceMappingURL=scripts.aa234091.js.map
