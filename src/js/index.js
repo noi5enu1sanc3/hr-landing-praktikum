@@ -77,9 +77,6 @@ const offersList = new List(
   OFFERS_ITEM_SELECTOR_CONFIG
 );
 
-const anchorScroll = new AnchorScroll(document);
-anchorScroll.setAnchorScroll();
-
 const filterOffers = new FilterOffers(
   offersData,
   BUTTON_TABS_CONFIG,
