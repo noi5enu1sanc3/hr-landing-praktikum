@@ -112,7 +112,6 @@ const pagination = new Pagination(offersData, OFFERS_ITEM_SELECTOR_CONFIG,
   },);
   pagination.renderPagination();
   filterOffers.renderData(offersData);
-  pagination.setEventListeners();
 
 const accordion = new Accordion(ACCORDION_SELECTOR_CONFIG);
 accordion.setEventListener();

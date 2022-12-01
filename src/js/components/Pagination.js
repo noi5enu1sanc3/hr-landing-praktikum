@@ -9,11 +9,6 @@ export class Pagination {
     this._paginationItemSelector = configSelectors.paginationItemSelector;
     this._paginationListElement = document.querySelector(configSelectors.paginationListSelector);
 
-    this._paginationBackButtonElement = document.querySelector(configSelectors.paginationBackButtonSelector);
-    this._paginationNextButtonElement = document.querySelector(configSelectors.paginationNextButtonSelector);
-
-    console.log(this._paginationBackButtonElement);
-
     this._currentPageClass = configSelectors.currentPageClass;
 
     this._itemsPerPage = 10; //temp, will use resize
@@ -63,16 +58,6 @@ export class Pagination {
     element?.classList.add('tabs__pagination-item_active');
   };
 
-  _goBack() {
-    console.log('back');
-    this.setCurrentData(this._data, this._currentPage - 1);
-  }
-
-  _goNext() {
-    this.setCurrentData(this._data, this._currentPage + 1);
-  }
-
-
   setCurrentData(data, pageNumber = 1) {
     this._currentPage = pageNumber;
     this._end = this._currentPage * this._itemsPerPage;
@@ -92,11 +77,5 @@ export class Pagination {
     console.log(this._currentData);
 
     return this._currentData; //метод возвращающий наружу элементы для рендеринга текущей страницы
-  }
-
-  setEventListeners() {
-    this._paginationBackButtonElement.addEventListener('click', () => this._goBack());
-    this._paginationNextButtonElement.addEventListener('click', () => this._goNext());
-    console.log(this._paginationNextButtonElement)
   }
 }
