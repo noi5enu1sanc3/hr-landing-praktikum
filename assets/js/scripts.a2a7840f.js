@@ -641,10 +641,13 @@ var offersList = new List({
     offersList.addItem(offer);
   }
 }, OFFERS_ITEM_SELECTOR_CONFIG);
+var anchorScroll = new AnchorScroll(document);
+anchorScroll.setAnchorScroll();
 var filterOffers = new FilterOffers(offersData_namespaceObject, BUTTON_TABS_CONFIG, {
   rendererData: function rendererData(data) {
     offersList.clearList();
     offersList.render(data);
+    anchorScroll.setAnchorScroll();
   }
 }, {
   filterUtils: {
@@ -666,11 +669,9 @@ quiz.setEventListeners();
 quiz.startQuiz();
 var video = new VideoLoad(VIDEO_SELECTOR_CONFIG);
 video.setEventListener();
-var anchorScroll = new AnchorScroll(document);
-anchorScroll.setAnchorScroll();
 ;// CONCATENATED MODULE: ./src/app.js
 
 
 /******/ })()
 ;
-//# sourceMappingURL=scripts.355caf1b.js.map
+//# sourceMappingURL=scripts.a2a7840f.js.map
