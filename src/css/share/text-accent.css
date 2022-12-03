@@ -1,0 +1,15 @@
+.text-accent {
+  color: var(--black-color);
+}
+
+.text-accent_color_orange {
+  color: var(--moderate-orange-color);
+}
+
+.text-accent_color_yellow {
+  color: var(--yandex-color);
+}
+
+.text-accent_color_aquamarine {
+  color: var(--shamrock-color);
+}

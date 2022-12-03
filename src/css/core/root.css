@@ -1,0 +1,9 @@
+.root {
+  background-color: var(--smoky-white-color);
+  margin: 0;
+}
+
+div,
+section {
+  box-sizing: border-box;
+}

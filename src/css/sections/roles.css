@@ -1,0 +1,394 @@
+@keyframes grow {
+  from {
+    width: calc(50% - 8px);
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.roles__list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+}
+
+.roles__item {
+  border-radius: var(--corners-radius);
+  background-color: var(--white-color);
+  padding: 48px 26px;
+  width: calc(50% - 8px);
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.roles__item_opened {
+  width: 100%;
+  flex-shrink: 0;
+  animation: grow .5s linear;
+}
+
+.roles__item_left {
+  left: 0;
+}
+
+.roles__item_right {
+  right: 0;
+  margin-left: auto;
+}
+
+.roles__item_closed-left {
+  z-index: 0;
+  opacity: 0;
+  display: none;
+}
+
+.roles__item_closed-right {
+  z-index: 0;
+  opacity: 0;
+  display: none;
+}
+
+.roles__main {
+  min-height: 839px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 5;
+  width: 526px;
+}
+
+.roles__main_right {
+  margin-left: auto;
+}
+
+.roles__open-btn {
+  align-self: center;
+}
+
+.roles__close-btn {
+  align-self: center;
+  border-radius: 50%;
+  border: 2px solid var(--black-color);
+  background: url("../../uploads/images/close-icon-cross.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.roles_visually-hidden {
+  display: none;
+}
+
+.roles__details {
+  padding: 48px 26px;
+  position: absolute;
+  box-sizing: border-box;
+  background-color: var(--white-color);
+  top: 0;
+  opacity: 0;
+  width: 0;
+}
+
+.roles__details_left {
+  margin-left: -100%;
+  right: 0;
+}
+
+.roles__details_right {
+  margin-right: -100%;
+  left: 0;
+}
+
+.roles__details_opened-left {
+  opacity: 1;
+  z-index: 2;
+  width: 48%;
+  height: 100%;
+  margin-left: 0;
+  transition: opacity .4s ease-in;
+  transition-delay: .6s;
+}
+
+.roles__details_opened-right {
+  opacity: 1;
+  z-index: 2;
+  width: 48%;
+  height: 100%;
+  margin-right: 0;
+  transition: opacity .4s ease-in;
+  transition-delay: .6s;
+}
+
+.roles__details-content {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all .4s ease-in;
+  transition-delay: .5s;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.roles__details-content_open {
+  opacity: 1;
+}
+
+.roles__info {
+  margin-bottom: auto;
+}
+
+.roles__title {
+  margin: 0 auto;
+  margin-bottom: 60px;
+  text-align: center;
+  font-family: var(--ya-text-font);
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: var(--black-ya-color);
+}
+
+.roles__title-role {
+  display: block;
+  width: 100%;
+}
+
+.roles__title_accent_yellow {
+  color: var(--yandex-color);
+}
+
+.roles__title_accent_aquamarine {
+  color: var(--shamrock-color);
+}
+
+.roles__description {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.2;
+  color: var(--black-ya-color);
+}
+
+.roles__text-list {
+  list-style-type: disc;
+  font-size: 20px;
+  line-height: 1.45;
+  letter-spacing: -0.5px;
+  align-self: flex-start;
+}
+
+.roles__text-list-item {
+  word-wrap: break-word;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+.roles__details-content-text {
+  color: var(--black-ya-color);
+}
+
+.roles__details-text {
+  font-size: 20px;
+  line-height: 1.45;
+  letter-spacing: -0.5px;
+}
+
+.roles__details-text_accented {
+  font-weight: 500;
+}
+
+.roles__details-text_subtitle {
+  font-size: 24px;
+  line-height: 1.3;
+  font-weight: 500;
+  margin: 28px 0 12px;
+}
+
+.roles__image {
+  margin-bottom: 52px;
+  width: 100%;
+  height: 263px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.role__image_reviewer {
+  background-image: url("../../uploads/images/reviewer-image.svg");
+}
+
+.role__image_mentor {
+  background-image: url("../../uploads/images/mentor-image.svg");
+}
+
+@media screen and (max-width: 1110px) {
+  .roles__item {
+    padding: 24px;
+  }
+
+  .roles__main {
+    width: 448px;
+  }
+
+  .roles__details {
+    padding: 24px;
+  }
+
+  .roles__title {
+    font-size: 38px;
+    margin-bottom: 30px;
+  }
+
+  .roles__text-list-item {
+    font-size: 22px;
+  }
+
+  .roles__details-text {
+    font-size: 18px;
+  }
+
+  .roles__details-text_subtitle {
+    font-size: 22px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .roles__list {
+    flex-direction: column;
+  }
+
+  .roles__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .roles__item:first-child {
+    margin-bottom: 8px;
+  }
+
+  .roles__main {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .roles__info {
+    margin-bottom: 38px;
+  }
+
+  .roles__open-btn {
+    display: none;
+  }
+
+  .roles__close-btn {
+    display: none;
+  }
+
+  .roles__item_closed-left {
+    z-index: 1;
+    opacity: 1;
+    display: flex;
+  }
+
+  .roles__item_closed-right {
+    z-index: 1;
+    opacity: 1;
+    display: flex;
+  }
+
+  .roles__details {
+    position: static;
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    opacity: 1;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    transition: all .4s ease-in;
+    order: 2;
+  }
+
+  .roles__details-content {
+    opacity: 1;
+  }
+
+  .roles__details_opened-right {
+    display: flex;
+    width: 100%;
+    order: 1;
+  }
+
+  .roles__details-content-text {
+    margin-bottom: 44px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .roles__title {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .roles__text-list-item {
+    font-size: 20px;
+  }
+
+  .roles__details-text {
+    font-size: 18px;
+  }
+
+  .roles__details-text_subtitle {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .roles__item {
+    padding: 24px 16px;
+  }
+
+  .roles__title {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .roles__text-list-item {
+    font-size: 14px;
+    max-width: 342px;
+  }
+
+  .roles__details-text {
+    font-size: 14px;
+  }
+
+  .roles__details-text_subtitle {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 500;
+    margin: 24px 0 8px;
+  }
+
+  .roles__image {
+    margin-bottom: 33px;
+    height: 165px;
+  }
+}

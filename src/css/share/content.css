@@ -1,0 +1,15 @@
+.content__item {
+  margin: 12px auto 0;
+  box-sizing: border-box;
+  border-radius: var(--corners-radius);
+}
+
+@media screen and (max-width: 576px){
+  .content {
+    margin: 80px 0 0;
+  }
+
+  .content__item {
+    margin: 8px auto 0;
+  }
+}
